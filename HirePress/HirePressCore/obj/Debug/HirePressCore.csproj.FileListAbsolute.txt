@@ -1,0 +1,12 @@
+D:\External Projects\HirePress\HirePress\HirePressCore\bin\Debug\HirePressCore.dll.config
+D:\External Projects\HirePress\HirePress\HirePressCore\bin\Debug\HirePressCore.dll
+D:\External Projects\HirePress\HirePress\HirePressCore\bin\Debug\HirePressCore.pdb
+D:\External Projects\HirePress\HirePress\HirePressCore\bin\Debug\EntityFramework.dll
+D:\External Projects\HirePress\HirePress\HirePressCore\bin\Debug\EntityFramework.SqlServer.dll
+D:\External Projects\HirePress\HirePress\HirePressCore\bin\Debug\EntityFramework.xml
+D:\External Projects\HirePress\HirePress\HirePressCore\bin\Debug\EntityFramework.SqlServer.xml
+D:\External Projects\HirePress\HirePress\HirePressCore\obj\Debug\HirePressCore.csprojAssemblyReference.cache
+D:\External Projects\HirePress\HirePress\HirePressCore\obj\Debug\HirePressCore.csproj.CoreCompileInputs.cache
+D:\External Projects\HirePress\HirePress\HirePressCore\obj\Debug\HirePressCore.csproj.CopyComplete
+D:\External Projects\HirePress\HirePress\HirePressCore\obj\Debug\HirePressCore.dll
+D:\External Projects\HirePress\HirePress\HirePressCore\obj\Debug\HirePressCore.pdb
