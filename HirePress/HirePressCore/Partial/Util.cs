@@ -1,6 +1,7 @@
 ﻿using HirePressCore.DataAccess;
 using HirePressCore.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,6 +36,64 @@ namespace HirePressCore.Partial
                 throw ex;
             }
             return list;
+        }
+        public static string GetUserName(string email)
+        {
+            var username = "";
+            try
+            {
+                using (var entity = new HirePressEntity())
+                {
+                    var data = entity.AspNetUsers.Where(x=>x.Email == email).FirstOrDefault();
+                    username = data.FirstName + " " + data.LastName;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return username;
+        }
+
+        public static void CreateUserDetails(RegisterViewModel rvm)
+        {
+            try
+            {
+                using (var entity = new HirePressEntity())
+                {
+                    var data = entity.AspNetUsers.Where(x => x.Email == rvm.Email).FirstOrDefault();
+                    data.FirstName = rvm.FirstName;
+                    data.LastName = rvm.LastName;
+                    entity.Entry(data).State = System.Data.Entity.EntityState.Modified;
+                    entity.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public static ArrayList GetSkillsData(string skillType="Frontend")
+        {
+            try
+            {
+                using (var entity = new HirePressEntity())
+                {
+                    var data = entity.MasterSkills.Where(x => x.SkillType == skillType).FirstOrDefault();
+                    
+                        MasterSkillsModel MS = new MasterSkillsModel()
+                        {
+                            SkillData = data.SkillData
+                        };
+                        
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return new ArrayList();
         }
     }
 }

@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewBag.Title = "";
+}
+<style>
+    .onBack {
+        cursor: pointer;
+    }
+    button{
+        margin: 0.5rem 0.5rem 0.5rem 0;
+    }
+    .d-flex {
+        flex-wrap: wrap;
+    }
+</style>
+<link href="~/Content/model/onboard.css" rel="stylesheet" />
+
+
+<div class="container">
+
+
+
+    <div class="container">
+        <div class="col-sm-5 m-auto">
+            <div class="card border m-auto m-lg-0">
+                <div class="card-body step-1">
+                    <h2 class="text-center color-primary-600">STEP: 1/4</h2>
+                    <hr>
+                    @*<p class="card-text text-center">Fresh start with Hire Press.</p>*@
+                <div>
+                    @*<div class="form-group mt-5">
+                        <label class="form-label" for="name">Preffered Field</label>
+                        <div class="mt-2 d-flex ">
+                            <button type="button" class="btn btn-light btn-pills waves-effect waves-themed">Software Engineer</button>
+                            <button type="button" class="btn btn-light btn-pills waves-effect waves-themed">QA / Testing</button>
+                            <button type="button" class="btn btn-light btn-pills waves-effect waves-themed">Data Science</button>
+                            <button type="button" class="btn btn-light btn-pills waves-effect waves-themed">HR / Management</button>
+                        </div>
+                    </div>*@
+
+                    <div class="form-group mt-5">
+                        <label class="form-label" for="name">Preffered Job Roles</label>
+                        <div class="mt-2 d-flex ">
+                            <button type="button" class="btn btn-light btn-pills waves-effect waves-themed role-btn">Frontend</button>
+                            <button type="button" class="btn btn-light btn-pills waves-effect waves-themed role-btn">Backend</button>
+                            <button type="button" class="btn btn-light btn-pills waves-effect waves-themed role-btn">Full Stack</button>
+                            <button type="button" class="btn btn-light btn-pills waves-effect waves-themed role-btn">QA / Testing</button>
+                            <button type="button" class="btn btn-light btn-pills waves-effect waves-themed role-btn">Data Science</button>
+                            <button type="button" class="btn btn-light btn-pills waves-effect waves-themed role-btn">HR / Management</button>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    @*<a class="color-primary-900 onBack">Go Back</a>*@
+                    <button type="submit" class="btn btn-primary float-right color-white waves-effect waves-themed step-1-next">NEXT</button>
+                </div>
+                </div>
+
+                <div class="card-body step-2">
+                    <h2 class="text-center color-primary-600">STEP: 2/4</h2>
+                    <hr>
+                    <p class="card-text text-center">Fresh start with Hire Press.</p>
+                    <div>
+                        <input name="__RequestVerificationToken" type="hidden" value="f-GPfRkYcAias2eeug8-SIShh8hQ9m0q4jB-CeTsEaLVS0BxD8H8N4UZnTQ3pCGU4uFqeBcB1KrV02nwrjsSNIDwTKcgEGjakpWHO1nSGhQ1">                    <div class="form-group">
+                            <label class="form-label" for="name">First Name</label>
+                            <input class="form-control" data-val="true" data-val-length="The First Name must be at least 2 characters long." data-val-length-max="100" data-val-length-min="2" data-val-required="The First Name field is required." id="FirstName" name="FirstName" placeholder="First Name" type="text" value="">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="FirstName" data-valmsg-replace="true"></span>
+                        </div>
+                       
+                        <a class="color-primary-900 onBack">Go Back</a>
+                        <button type="submit" class="btn btn-primary float-right color-white waves-effect waves-themed step-1-next">NEXT</button>
+                    </div>
+                </div>
+
+                <div class="card-body step-3">
+                    <h2 class="text-center color-primary-600">STEP: 3/4</h2>
+                    <hr>
+                    <p class="card-text text-center">Fresh start with Hire Press.</p>
+                    <div>
+                        <input name="__RequestVerificationToken" type="hidden" value="f-GPfRkYcAias2eeug8-SIShh8hQ9m0q4jB-CeTsEaLVS0BxD8H8N4UZnTQ3pCGU4uFqeBcB1KrV02nwrjsSNIDwTKcgEGjakpWHO1nSGhQ1">                    <div class="form-group">
+                            <label class="form-label" for="name">First Name</label>
+                            <input class="form-control" data-val="true" data-val-length="The First Name must be at least 2 characters long." data-val-length-max="100" data-val-length-min="2" data-val-required="The First Name field is required." id="FirstName" name="FirstName" placeholder="First Name" type="text" value="">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="FirstName" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="name">Last Name</label>
+                            <input class="form-control" data-val="true" data-val-length="The Last Name must be at least 2 characters long." data-val-length-max="100" data-val-length-min="2" data-val-required="The Last Name field is required." id="LastName" name="LastName" placeholder="Last Name" type="text" value="">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="LastName" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-control" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" placeholder="Email" type="text" value="">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Email" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">Password</label>
+                            <input class="form-control" data-val="true" data-val-length="The Password must be at least 8 characters long." data-val-length-max="100" data-val-length-min="8" data-val-required="The Password field is required." id="Password" name="Password" placeholder="Password" type="password">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="password">Confirm Password</label>
+                            <input class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" placeholder="Confirm Password" type="password">
+                            <span class="field-validation-valid text-danger" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+                        </div>
+                        <a class="color-primary-900 onBack">Go Back</a>
+                        <button type="submit" class="btn btn-primary float-right color-white waves-effect waves-themed step-1-next">NEXT</button>
+                    </div>
+                </div>
+
+                <div class="card-body step-4">
+                    <h2 class="text-center color-primary-600">STEP: 4/4</h2>
+                    <hr>
+                   
+                    <div>
+                        <h1 class="text-center mt-5">You are all set!</h1>
+                        <hr />
+                        <a class="color-primary-900 onBack mt-5">Go Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+@section scripts{
+
+    <script src="~/Scripts/model/onboard.js"></script>
+}
