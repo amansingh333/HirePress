@@ -14,6 +14,12 @@ namespace HirePress.Controllers
             var allFlags = Util.GetAllFlags();
             return View(allFlags);
         }
+        public ActionResult PostJob()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
 
         public ActionResult About()
         {

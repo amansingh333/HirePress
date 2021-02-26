@@ -41,7 +41,6 @@
         public bool LockoutEnabled { get; set; }
 
         public int AccessFailedCount { get; set; }
-        public string UserType { get; set; }
 
         [Required]
         [StringLength(256)]

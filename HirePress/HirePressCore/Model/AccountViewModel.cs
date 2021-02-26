@@ -19,9 +19,6 @@ namespace HirePressCore.Model
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
         public string LastName { get; set; }
 
-        [Display(Name = "User Type")]
-        public bool UserType { get; set; }
-
         [Display(Name = "Contact #")]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNo { get; set; }
@@ -32,36 +29,6 @@ namespace HirePressCore.Model
 
         [Display(Name = "Newsletter")]
         public bool Newsletter { get; set; }
-
-        [Display(Name = "Agency Name")]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 4)]
-        public string AgencyName { get; set; }
-
-        [Display(Name = "Agency Address")]
-        public string AgencyAddressline1 { get; set; }
-
-        public string AgencyAddressline2 { get; set; }
-
-        [Display(Name = "Zip Code")]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 4)]
-        public string ZipCode { get; set; }
-
-        [Display(Name = "Contact Number 1")]
-        [DataType(DataType.PhoneNumber)]
-        public string ContactNumber1 { get; set; }
-
-        [Display(Name = "Contact Number 2")]
-        [DataType(DataType.PhoneNumber)]
-        public string ContactNumber2 { get; set; }
-
-        [Display(Name = "Website URL")]
-        public string WebsiteURL { get; set; }
-
-        [Display(Name = "Logo")]
-        public string Logo { get; set; }
-
-        [Display(Name = "PackageBought")]
-        public bool PackageBought { get; set; }
 
         [Required]
         [EmailAddress]
