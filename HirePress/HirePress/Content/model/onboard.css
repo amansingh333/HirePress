@@ -1,3 +1,190 @@
 ﻿.onBack {
     cursor: pointer;
 }
+.selected-btn {
+    background: green !important;
+    color: white !important;
+}
+
+
+
+
+.upload-box {
+    height: 400px;
+    background-color: #f7f7f7;
+    border: 4px dashed #ccc;
+    border-radius: 1em;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#upload-icon {
+    width: 70px;
+    fill: #444;
+}
+
+.upload-title {
+    font-size: 1.05rem;
+    margin: 8px 0;
+    color: #444
+}
+
+.upload-text {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: #777;
+    width: 150px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.upload-browse {
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+.file-list-title {
+    text-align: center;
+    margin: 30px 0 20px;
+    font-weight: 700;
+}
+
+.file {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.file-icon {
+    width: 40px;
+    height: 53px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    margin-right: 25px;
+    background: #eee;
+    border: 3px solid #555;
+}
+
+    /* Testing colored icons
+
+.file-icon[data-type^="pdf"] {
+  background: #d0f1fc;
+  border-color: #4a99db;
+}
+
+.file-icon[data-type^="pdf"]::before {
+  border-color: #fff #fff #4a99db #4a99db;
+}
+
+.file-icon[data-type^="pdf"]::after {
+  color: #4a99db;
+}
+
+.file-icon[data-type^="png"], .file-icon[data-type^="ai"] {
+  background: #ffefe0;
+  border-color: #ffaf59;
+}
+
+.file-icon[data-type^="png"]::before, .file-icon[data-type^="ai"]::before {
+  border-color: #fff #fff #ffaf59 #ffaf59;
+}
+
+.file-icon[data-type^="png"]::after, .file-icon[data-type^="ai"]::after {
+  color: #ffaf59;
+} */
+
+    .file-icon::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: -3px;
+        right: -3px;
+        width: 0;
+        height: 0;
+        border-bottom-left-radius: 2px;
+        border-width: 6px;
+        border-style: solid;
+        border-color: #fff #fff #555 #555;
+    }
+
+    .file-icon::after {
+        font-size: 0.85rem;
+        font-family: 'Roboto', 'Open Sans', 'sans-serif';
+        font-weight: 700;
+        display: block;
+        content: attr(data-type);
+        position: absolute;
+        bottom: 35%;
+        color: #444;
+        text-transform: uppercase;
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        letter-spacing: 0.75px;
+    }
+
+.text-and-progress {
+    flex: 1;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+}
+
+.file-name {
+    margin-bottom: 7px;
+}
+
+.progress {
+    display: flex;
+    height: 0.35rem;
+    overflow: hidden;
+    background-color: #e9ecef;
+    border-radius: .1rem;
+}
+
+.progress-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #66cd8c;
+    transition: width .6s ease;
+}
+
+.file-size {
+    margin-top: 0.5rem;
+    font-weight: 500;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #aaa;
+}
+
+.file-status {
+    margin-left: 20px;
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+.downloading {
+    color: #e9ecef;
+}
+
+    .downloading:hover {
+        color: #f05064;
+        cursor: pointer;
+    }
+
+.complete {
+    color: #66cd8c;
+}
