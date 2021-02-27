@@ -12,6 +12,6 @@ namespace HirePressCore.DataAccess
         public int ID { get; set; }
         public string SkillType { get; set; }
 
-        public string SkillData { get; set; }
+        public string SkillTypeData { get; set; }
     }
 }

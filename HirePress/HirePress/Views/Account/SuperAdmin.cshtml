@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "Super Admin";
+}
+
+<div class="container">
+    <table id="dt-basic-example" class="table table-bordered table-hover table-striped w-100">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Is Admin</th>
+            </tr>
+        </thead>
+        <tbody id="user_data">
+            
+            </tbody>
+    </table>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $.ajax({
+                url: "/Account/GetUserDetailsData",
+                type: "GET",
+                success: function (data) {
+                    for (let i = 0; i < data.length; i++) {
+                        var user = "";
+                        user += '<tr>';
+                        user += '<td>' + data[i].Name + '</td>';
+                        user += '<td>' + data[i].Email + '</td>';
+                        user += '<td>';
+                        user += '<div class="custom-control custom-checkbox">';
+                        if (data[i].Roles.length !== 0) {
+                            if (data[i].Roles[1] == "superadmin" && data[i].Roles.length > 1) {
+                                user += '<input type="checkbox" class="custom-control-input" id="' + data[i].UserID + '" checked="" disabled>';
+                                user += '<label class="custom-control-label" for="' + data[i].UserID + '">Super Admin</label>';
+                            }
+                            else {
+                                user += '<input type="checkbox" class="custom-control-input" id="' + data[i].UserID + '" checked="">';
+                                user += '<label class="custom-control-label" for="' + data[i].UserID + '">Admin</label>';
+                            }
+                        }
+                        else {
+                            user += '<input type="checkbox" class="custom-control-input" id="' + data[i].UserID + '">';
+                            user += '<label class="custom-control-label" for="' + data[i].UserID + '"></label>';
+                        }
+                        user += '</div>';
+                        user += '</td>';
+                        user += '</tr>';
+                        $('#user_data').append(user);
+                    }
+                    $('#dt-basic-example').dataTable(
+                        {
+                            responsive: true
+                        });
+                    $('.js-thead-colors a').on('click', function () {
+                        var theadColor = $(this).attr("data-bg");
+                        console.log(theadColor);
+                        $('#dt-basic-example thead').removeClassPrefix('bg-').addClass(theadColor);
+                    });
+
+                    $('.js-tbody-colors a').on('click', function () {
+                        var theadColor = $(this).attr("data-bg");
+                        console.log(theadColor);
+                        $('#dt-basic-example').removeClassPrefix('bg-').addClass(theadColor);
+                    });
+                    $('input[type=checkbox]').change((e) => {
+                        $.ajax({
+                            url: "/Account/SetRemoveAdminRole?Id=" + e.currentTarget.id + "&Update=" + e.currentTarget.checked,
+                            type: "POST",
+                            success: function (data) {
+                                if (data !== null) {
+                                    if (e.currentTarget.checked)
+                                        Swal.fire("Got Admin Role!");
+                                    else
+                                        Swal.fire("Removed From Admin Role!")
+                                }
+
+                            },
+                            error: function (err) {
+                                alert(err.responseText);
+                            }
+                        });
+                    });
+                },
+                error: function (err) {
+                    alert(err.responseText);
+                }
+            });
+        });
+        
+    </script>
+    }
+

@@ -13,7 +13,7 @@
         {
             AspNetUserClaims = new HashSet<AspNetUserClaim>();
             AspNetUserLogins = new HashSet<AspNetUserLogin>();
-            AspNetRoles = new HashSet<AspNetRole>();
+            AspNetRoles = new HashSet<AspNetRoles>();
         }
         public string Id { get; set; }
 
@@ -53,6 +53,6 @@
         public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AspNetRole> AspNetRoles { get; set; }
+        public virtual ICollection<AspNetRoles> AspNetRoles { get; set; }
     }
 }

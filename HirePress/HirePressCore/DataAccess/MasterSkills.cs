@@ -9,11 +9,11 @@ namespace HirePressCore.DataAccess
     public partial class MasterSkills
     {
         [Key]
-        public int ID { get; set; }
+        public int SkillID { get; set; }
 
         [StringLength(20)]
         public string SkillType { get; set; }
 
-        public string SkillData { get; set; }
+        public string SkillTypeData { get; set; }
     }
 }

@@ -11,27 +11,21 @@ namespace HirePress.Controllers
     {
         public ActionResult Index()
         {
-            //var allFlags = Util.GetAllFlags();
             return View();
         }
+
         public ActionResult PostJob()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
     }

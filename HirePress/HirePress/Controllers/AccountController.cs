@@ -112,6 +112,7 @@ namespace HirePress.Controllers
         }
 
         [AllowAnonymous]
+        [OutputCache(NoStore = true, Location = System.Web.UI.OutputCacheLocation.None)]
         public ActionResult Login()
         {
             return View();
@@ -130,6 +131,7 @@ namespace HirePress.Controllers
             // To enable password failures to trigger account lockout, change to shouldLockout: true
 
             var user = await UserManager.FindByEmailAsync(model.Email);
+            
             if (user == null)
             {
                 // Don't reveal that the user does not exist or is not confirmed
@@ -142,7 +144,7 @@ namespace HirePress.Controllers
                 return View("Login");
             }
             var result = await SignInManager.PasswordSignInAsync(user.UserName, model.Password, isPersistent: false, shouldLockout: false);
-
+            
             switch (result)
             {
                 case SignInStatus.Success:
@@ -150,7 +152,24 @@ namespace HirePress.Controllers
                     Session["UserEmail"] = model.Email;
                     Session["UserType"] = "LoggedIn";
                     Session["UserName"] = Util.GetUserName(model.Email);
-                    return RedirectToLocal(returnUrl);
+                    if (UserManager.IsInRole(user.Id, "admin"))
+                    {
+                        Session["UserAdmin"] = "Admin";
+                        if(UserManager.IsInRole(user.Id, "superadmin"))
+                        {
+                            Session["UserSuperAdmin"] = "SuperAdmin";
+                            return RedirectToLocal(returnUrl, "superadmin");
+                        }
+                        else
+                        {
+                            return RedirectToLocal(returnUrl, "admin");
+                        }
+
+                    }
+                    else
+                    {
+                        return RedirectToLocal(returnUrl, "user");
+                    }
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
@@ -171,6 +190,7 @@ namespace HirePress.Controllers
             Session["UserEmail"] = null;
             Session["UserName"] = null;
             Session["Email"] = null;
+            Session["UserRole"] = null;
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             AuthenticationManager.SignOut();
             Session.Abandon();
@@ -180,8 +200,39 @@ namespace HirePress.Controllers
         [AllowAnonymous]
         public ActionResult OnBoard()
         {
-            var a = Util.GetSkillsData("Frontend");
             return View();
+        }
+
+        public ActionResult Admin()
+        {
+            return View();  
+        }
+        public ActionResult SuperAdmin()
+        {
+            return View();
+        }
+
+        //For Super Admin
+        [HttpPost]
+        public async Task<ActionResult> SetRemoveAdminRole(string Id, bool Update)
+        {
+            if (Update)
+            {
+                await UserManager.AddToRoleAsync(Id, "admin");
+            }
+            else
+            {
+                await UserManager.RemoveFromRoleAsync(Id, "admin");
+            }
+            return RedirectToAction("SuperAdmin");
+        }
+
+        //For Super Admin
+        [HttpGet]
+        public JsonResult GetUserDetailsData()
+        {
+            var data = Util.GetUserDetails();
+            return Json(data, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)
@@ -223,14 +274,18 @@ namespace HirePress.Controllers
             }
         }
 
-        private ActionResult RedirectToLocal(string returnUrl)
+        private ActionResult RedirectToLocal(string returnUrl, string role)
         {
             if (Url.IsLocalUrl(returnUrl))
             {
                 return Redirect(returnUrl);
             }
-            
-            return RedirectToAction("Index", "Home");
+            if (role == "user")
+                return RedirectToAction("Index", "Home");
+            else if(role == "admin")
+                return RedirectToAction("Admin");
+            else
+                return RedirectToAction("SuperAdmin");
         }
 
         internal class ChallengeResult : HttpUnauthorizedResult

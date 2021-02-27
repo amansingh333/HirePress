@@ -6,7 +6,7 @@ namespace HirePressCore.DataAccess
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Master_Flag
+    public partial class MasterFlags
     {
         [Key]
         public int FlagID { get; set; }

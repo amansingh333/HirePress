@@ -1,0 +1,13 @@
+﻿.create-list {
+    padding: 10px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+    .create-list:hover {
+        background: #f3f0f0;
+    }
+
+.select {
+    background: #f3f0f0;
+}

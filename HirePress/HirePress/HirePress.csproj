@@ -157,6 +157,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\APIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="CustomPasswordHasher.cs" />
     <Compile Include="Encrypt.cs" />
@@ -170,6 +171,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\model\admin.css" />
     <Content Include="Content\model\onboard.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -187,7 +189,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\model\admin.js" />
     <Content Include="Scripts\model\onboard.js" />
+    <Content Include="Scripts\model\test.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Theme\bootstrap\css\bootstrap-responsive.css" />
     <Content Include="Theme\bootstrap\css\bootstrap-responsive.min.css" />
@@ -617,7 +621,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -723,6 +726,9 @@
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Shared\_StylesLoading.cshtml" />
     <Content Include="Views\Account\OnBoard.cshtml" />
+    <Content Include="Views\Account\Admin.cshtml" />
+    <Content Include="Views\API\TestAPI.cshtml" />
+    <Content Include="Views\Account\SuperAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

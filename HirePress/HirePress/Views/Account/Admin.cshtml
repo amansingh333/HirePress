@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Admin Panel";
+}
+<link href="~/Content/model/admin.css" rel="stylesheet" />
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="row">
+                <div class="col-sm-12 create-list select">
+                    Add Skills
+                </div>
+                <div class="col-sm-12 create-list">
+                    Other
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div style="display:flex;justify-content:space-between;">
+                <select class="form-control" style="width:30%;" id="skill_type">
+                    <option value="Frontend">Frontend</option>
+                    <option value="Backend">Backend</option>
+                    <option value="Full Stack">Full Stack</option>
+                    <option value="QA/Testing">QA/Testing</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="HR/Management">HR/Management</option>
+                </select>
+                <input type="text" class="form-control" id="skill" placeholder="Type one skill and click Add" style="width:50%;" />
+                <button type="button" class="btn btn-default" onclick="AddSkill()">Add</button>
+            </div>
+            <br />
+            <textarea class="form-control" rows="5" readonly="" id="textarea"></textarea>
+            <br />
+            <button type="button" class="btn btn-primary" style="float:right" onclick="SaveSkillsTypeData()">Submit</button>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Scripts/model/admin.js"></script>
+}
+

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -45,6 +46,8 @@ namespace HirePressCore.Model
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+
     }
     public class LoginViewModel
     {
@@ -86,6 +89,14 @@ namespace HirePressCore.Model
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
+    }
+
+    public class GetRegisterViewModel
+    {
+        public string Email { get; set; }
+        public string Name { get; set; }
+        public string UserID { get; set; }
+        public ArrayList Roles { get; set; }
     }
 
 

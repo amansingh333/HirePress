@@ -1,5 +1,6 @@
 ﻿using HirePressCore.DataAccess;
 using HirePressCore.Model;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,31 +12,21 @@ namespace HirePressCore.Partial
 {
     public partial class Util
     {
-        public static List<Master_FlagModel> GetAllFlags()
+        public static bool GetFlag(string FlagName)
         {
-            List<Master_FlagModel> list = new List<Master_FlagModel>();
+            bool flag;
             try
             {
                 using (var entity = new HirePressEntity())
                 {
-                    var data = entity.Master_Flag.ToList();
-                    foreach (var a in data)
-                    {
-                        Master_FlagModel MFM = new Master_FlagModel()
-                        {
-                            FlagID = a.FlagID,
-                            FlagName = a.FlagName,
-                            IsFlag = a.IsFlag
-                        };
-                        list.Add(MFM);
-                    }
+                    flag = entity.MasterFlags.Where(x=>x.FlagName == FlagName).Select(x=>x.IsFlag).SingleOrDefault();
                 }
             }
             catch(Exception ex)
             {
                 throw ex;
             }
-            return list;
+            return flag;
         }
         public static string GetUserName(string email)
         {
@@ -73,27 +64,37 @@ namespace HirePressCore.Partial
                 throw ex;
             }
         }
-
-        public static ArrayList GetSkillsData(string skillType="Frontend")
+        public static List<GetRegisterViewModel> GetUserDetails()
         {
+            List<GetRegisterViewModel> rvml = new List<GetRegisterViewModel>();
             try
             {
                 using (var entity = new HirePressEntity())
                 {
-                    var data = entity.MasterSkills.Where(x => x.SkillType == skillType).FirstOrDefault();
-                    
-                        MasterSkillsModel MS = new MasterSkillsModel()
+                    var users = entity.AspNetUsers;
+                    foreach(var user in users)
+                    {
+                        GetRegisterViewModel rvm = new GetRegisterViewModel();
+                        ArrayList al = new ArrayList();
+                        foreach (var role in user.AspNetRoles)
                         {
-                            SkillData = data.SkillData
-                        };
-                        
+                            al.Add(role.Name);
+                        }
+                        rvm.Name = user.FirstName + " " + user.LastName;
+                        rvm.Email = user.Email;
+                        rvm.UserID = user.Id;
+                        rvm.Roles = al;
+                        rvml.Add(rvm);
+                    }
                 }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return new ArrayList();
+            return rvml;
         }
+
+
     }
 }

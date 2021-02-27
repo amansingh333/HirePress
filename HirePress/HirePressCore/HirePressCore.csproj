@@ -59,17 +59,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\AspNetRole.cs" />
+    <Compile Include="DataAccess\AspNetRoles.cs" />
     <Compile Include="DataAccess\AspNetUser.cs" />
     <Compile Include="DataAccess\AspNetUserClaim.cs" />
     <Compile Include="DataAccess\AspNetUserLogin.cs" />
     <Compile Include="DataAccess\HirePressEntity.cs" />
     <Compile Include="DataAccess\MasterSkills.cs" />
-    <Compile Include="DataAccess\Master_Flag.cs" />
+    <Compile Include="DataAccess\MasterFlags.cs" />
     <Compile Include="Model\AccountViewModel.cs" />
     <Compile Include="Model\IdentityModels.cs" />
     <Compile Include="Model\MasterSkillsModel.cs" />
-    <Compile Include="Model\Master_FlagModel.cs" />
+    <Compile Include="Model\MasterFlagsModel.cs" />
+    <Compile Include="Partial\GetAPI.cs" />
+    <Compile Include="Partial\SetAPI.cs" />
     <Compile Include="Partial\Util.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
