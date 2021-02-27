@@ -1,37 +1,113 @@
 ﻿
+
+$(document).ready(() => {
+  
+var payload = {
+    step1: {
+        job_role: '',
+        skills: []
+    },
+    step2: {
+        cv: ''
+    }
+}
+
+
+localStorage.setItem('curr_step', 1);
+localStorage.setItem('payload', JSON.stringify(payload));
+
 var currStep = 1;
 var lastStep = 1;
 
-var jobSkills = ['Angular','React','Vue']
+    var Frontend = ['Angular', 'React', 'Vue', 'Javascript', 'Html', 'Css', 'Scss', 'Bootstrap', 'Foundation', 'Typescript' ]
+    var Backend = ['Python', 'NodeJS', 'Java', 'PHP']
+
 
 $('.step-2').hide()
 $('.step-3').hide()
 $('.step-4').hide()
+$('.step-1-next').addClass('disabled')
+
+
+$(".onStep1").click(function ($event) {
+    console.log($event)
+    $('.step-1').hide()
+    $('.step-2').hide()
+    $('.step-3').show()
+})
 
 
 
+$(".onStep2").click(function ($event) {
+    console.log($event)
+    $('.step-3').hide()
+    $('.step-4').show()
 
+});
 
-$(".step-1-next").click(function ($event) {
-    lastStep = currStep;
+$(".backToStep1").click(function ($event) {
+    $('.step-3').hide()
+    $('.step-1').show()
+    $('.step-2').show()
+
+});
+
+// On cv upload
+
+$(".input-file").click(function ($event) {
+    console.log($event)
+    var myFile = $('#fileinput').prop('files');
+    console.log(myFile)
+});
+
+  
+
+$(document).on('click', '.skills-btn', function ($event) {
+        if (($event.currentTarget).classList.contains('selected-btn')) {
+            ($event.currentTarget).classList.remove('selected-btn')
+            payload.step1.skills.forEach((e,index) => {
+                console.log(e)
+                if (e == $event.target.innerText) {
+                    payload.step1.skills.splice(index, 1)
+                    localStorage.setItem('payload', JSON.stringify(payload));
+                }
+            })
+        } else {
+            $($event.currentTarget).addClass('selected-btn');
+            payload.step1.skills.push($event.target.innerText);
+            localStorage.setItem('payload', JSON.stringify(payload));
+        }
+
+    $('.step-1-next').removeClass('disabled')
+
+    console.log(payload)
+});
+
+$(".role-btn").click(($event) => {
+    document.querySelectorAll(".role-btn").forEach(e => {
+        
+        if (e.classList.contains('selected-btn')) {
+            console.log(e)
+            $('#skills_data').empty()
+            e.classList.remove('selected-btn');
+        }
+    })
+
+    $($event.currentTarget).addClass('selected-btn');
+    payload.step1.job_role = $event.target.innerText;
+    localStorage.setItem('payload', JSON.stringify(payload));
+    for (let i = 0; i < Frontend.length; i++) {
+        $('#skills_data').append('<button type="button" class="btn btn-light btn-pills waves-effect waves-themed skills-btn">' + Frontend[i] + '</button>');
+    }
+
     currStep++
-    let hide = '.step-' + lastStep;
-    let show = '.step-' + currStep;
+    $('.step-2').show();
 
-    $(hide).hide()
-    $(show).show()
+
+    console.log(payload)
 });
 
-$(".onBack").click(function ($event) {
-    lastStep = currStep;
-    currStep--
-    let show = '.step-' + currStep;
-    let hide = '.step-' + lastStep;
 
-    $(hide).hide()
-    $(show).show()
-});
 
-$(".role-btn").click(function ($event) {
-    console.log($event.target.innerText)
+
 });
