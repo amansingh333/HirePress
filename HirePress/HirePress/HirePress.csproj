@@ -157,7 +157,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\APIController.cs" />
+    <Compile Include="Controllers\apiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="CustomPasswordHasher.cs" />
     <Compile Include="Encrypt.cs" />
@@ -727,7 +727,7 @@
     <Content Include="Views\Shared\_StylesLoading.cshtml" />
     <Content Include="Views\Account\OnBoard.cshtml" />
     <Content Include="Views\Account\Admin.cshtml" />
-    <Content Include="Views\API\TestAPI.cshtml" />
+    <Content Include="Views\api\TestAPI.cshtml" />
     <Content Include="Views\Account\SuperAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>

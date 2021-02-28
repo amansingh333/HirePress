@@ -4,10 +4,10 @@ $(document).ready(() => {
 
 
     $.ajax({
-        url: "API/TestAPI?GetSkillsTypeData=Frontend",
+        url: "/api/skills?skilltype=Frontend",
         type: "GET",
         success: function (data) {
-            return data
+            console.log(data)
         },
         error: function (err) {
             alert(err.responseText);
@@ -21,6 +21,12 @@ var payload = {
     },
     step2: {
         cv: ''
+    },
+    step3: {
+        degree: '',
+        college: '',
+        specialization: '',
+        graduation_year: ''
     }
 }
 
@@ -57,6 +63,21 @@ $(".onStep2").click(function ($event) {
 
 });
 
+$(".onStep3").click(function ($event) {
+    var $inputs = $('#myForm :input');
+    console.log($inputs)
+    // not sure if you wanted this, but I thought I'd add it.
+    // get an associative array of just the values.
+    var values = {};
+    $inputs.each(function () {
+        values[this.name] = $(this).val();
+    });
+    payload.step3 = values;
+    console.log(payload);
+    $('.step-4').hide()
+    alert('You are all set!')
+});
+
 $(".backToStep1").click(function ($event) {
     $('.step-3').hide()
     $('.step-1').show()
@@ -73,10 +94,10 @@ $(".backToStep2").click(function ($event) {
 
 // On cv upload
 
-$(".input-file").click(function ($event) {
+$(".input-file").change(function ($event) {
     console.log($event)
-    var myFile = $('#fileinput').prop('files');
-    console.log(myFile)
+    payload.step2.cv = $event.target.files[0]
+    console.log(payload)
 });
 
   

@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace HirePress.Controllers
 {
-    public class APIController : Controller
+    public class apiController : Controller
     {
         // GET: API
 
@@ -24,16 +24,16 @@ namespace HirePress.Controllers
         }
 
         [HttpGet]
-        public JsonResult GetSkillsTypeData(string SkillType)
+        public JsonResult skills(string skilltype)
         {
-            string data = GetAPI.GetSkillTypeData(SkillType);
+            string data = GetAPI.GetSkillTypeData(skilltype);
             String[] skillsList = null;
             if(data != "Not Found")
             {
                 skillsList = data.Split(new String[] { "," }, StringSplitOptions.None);
                 return Json(skillsList, JsonRequestBehavior.AllowGet);
             }
-            return Json(false);
+            return Json(false, JsonRequestBehavior.AllowGet);
         }
     }
 }
