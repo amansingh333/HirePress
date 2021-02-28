@@ -1,6 +1,18 @@
 ﻿
 
 $(document).ready(() => {
+
+
+    $.ajax({
+        url: "API/TestAPI?GetSkillsTypeData=Frontend",
+        type: "GET",
+        success: function (data) {
+            return data
+        },
+        error: function (err) {
+            alert(err.responseText);
+        }
+    });
   
 var payload = {
     step1: {
@@ -52,6 +64,13 @@ $(".backToStep1").click(function ($event) {
 
 });
 
+$(".backToStep2").click(function ($event) {
+    console.log($event)
+    $('.step-4').hide()
+    $('.step-3').show()
+
+});
+
 // On cv upload
 
 $(".input-file").click(function ($event) {
@@ -93,6 +112,14 @@ $(".role-btn").click(($event) => {
         }
     })
 
+
+
+    fetch('https://localhost:44371/API/TestAPI?GetSkillsTypeData=Frontend')
+        .then(data => data.json())
+        .then(res => {
+            console.log(res)
+        })
+
     $($event.currentTarget).addClass('selected-btn');
     payload.step1.job_role = $event.target.innerText;
     localStorage.setItem('payload', JSON.stringify(payload));
@@ -111,3 +138,5 @@ $(".role-btn").click(($event) => {
 
 
 });
+
+
