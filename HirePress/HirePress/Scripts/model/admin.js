@@ -1,9 +1,11 @@
 ﻿function AddSkill() {
     var skill = $('#skill').val();
-    var oldskills = $('#textarea').val();
-    var skills = oldskills + skill + ',';
-    $('#textarea').val(skills);
-    $('#skill').val('');
+    if (skill !== "") {
+        var oldskills = $('#textarea').val();
+        var skills = oldskills + skill + ',';
+        $('#textarea').val(skills);
+        $('#skill').val('');
+    }
 }
 function SaveSkillsTypeData() {
     var skillTypeData = $('textarea').val().slice(0, -1);

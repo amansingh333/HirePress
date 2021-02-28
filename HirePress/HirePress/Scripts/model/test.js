@@ -1,6 +1,6 @@
 ﻿$(document).ready(() => {
     $.ajax({
-        url: "/API/GetSkillsTypeData?SkillType=Frontend",
+        url: "/api/skills?skilltype=Frontend",
         type: "GET",
         success: function (data) {
             debugger;
