@@ -15,6 +15,9 @@
     .disabled{
         pointer-events: none;
     }
+    .pointer{
+        cursor: pointer;
+    }
 
     
 </style>
@@ -122,32 +125,36 @@
                     <hr>
                    
                     <div class="panel-content mb-5 mt-4">
-                        <div class="form-group">
-                            <label class="form-label" for="inputGroupSelect04">Select Degree</label>
-                            <div class="input-group">
-                                <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                    <option selected="">Choose...</option>
-                                    <option value="1">Btech</option>
-                                    <option value="2">Bca</option>
-                                    <option value="3">bba</option>
-                                </select>
-                            </div>
+                        <form id="myForm" class="step-3-form">
+                            <div class="form-group">
+                                <label class="form-label" for="inputGroupSelect04">Select Degree</label>
+                                <div class="input-group">
+                                    <select name="degree" class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                        <option selected="">Choose...</option>
+                                        <option value="btech">BTech</option>
+                                        <option value="bca">BCA</option>
+                                        <option value="bba">BBA</option>
+                                        <option value="mca">MCA</option>
+                                        <option value="bsc">BSC</option>
+                                    </select>
+                                </div>
 
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="simpleinput">College</label>
-                            <input type="text" id="simpleinput" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="simpleinput">Specialization</label>
-                            <input type="text" id="simpleinput" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="simpleinput">Graduation Year</label>
-                            <input type="text" id="simpleinput" class="form-control">
-                        </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="simpleinput">College</label>
+                                <input name="college" type="text" id="simpleinput" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="simpleinput">Specialization</label>
+                                <input name="specialization" type="text" id="simpleinput" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="simpleinput">Graduation Year</label>
+                                <input name="graduation_year" type="text" id="simpleinput" class="form-control">
+                            </div>
+                        </form>
                         <hr />
-                        <a class="color-primary-900 onBack mt-5">Go Back</a>
+                        <a class="color-primary-900 backToStep2 pointer mt-5">Go Back</a>
                         <button type="submit" class="btn btn-primary float-right color-white waves-effect waves-themed onStep3">NEXT</button>
                     </div>
                 </div>
