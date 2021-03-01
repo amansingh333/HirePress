@@ -27,14 +27,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
     <!-- BEGIN Page Wrapper -->
     <div class="page-wrapper">
         <div class="page-inner">
-                <!--<div class="page-logo">
-                    <a href="javascript:void(0)" class="page-logo-link d-flex align-items-center position-relative">
-                        <img src="~/Theme/img/logo.png" alt="Hire Press" aria-roledescription="logo">
-                        <span class="page-logo-text mr-1" style="font-weight:400;font-size:1.5rem;">HIRE PRESS</span>
-                        <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>-->
-                        @*<i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>*@
-                    <!--</a>
-                </div>-->
+            @Html.Partial("_Aside")
             <div class="page-content-wrapper">
                 @Html.Partial("_Header")
                 <!-- BEGIN Page Content -->
@@ -48,7 +41,7 @@ License: You must have a valid license purchased only from wrapbootstrap.com (li
                 @Html.Partial("_Footer")
 
                 @Html.Partial("_SettingsModal")
-                
+
             </div>
         </div>
     </div>

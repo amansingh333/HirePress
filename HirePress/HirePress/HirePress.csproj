@@ -729,6 +729,7 @@
     <Content Include="Views\Account\Admin.cshtml" />
     <Content Include="Views\api\TestAPI.cshtml" />
     <Content Include="Views\Account\SuperAdmin.cshtml" />
+    <Content Include="Views\Shared\_Aside.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
