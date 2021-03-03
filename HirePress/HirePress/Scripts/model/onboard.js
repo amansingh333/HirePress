@@ -63,7 +63,8 @@ $(".onStep2").click(function ($event) {
 
 });
 
-$(".onStep3").click(function ($event) {
+    $(".onStep3").click(function ($event) {
+        debugger;
     var $inputs = $('#myForm :input');
     console.log($inputs)
     // not sure if you wanted this, but I thought I'd add it.
@@ -74,8 +75,7 @@ $(".onStep3").click(function ($event) {
     });
     payload.step3 = values;
     console.log(payload);
-    $('.step-4').hide()
-    alert('You are all set!')
+    location.href = "/Candidate/Index";
 });
 
 $(".backToStep1").click(function ($event) {
@@ -123,7 +123,7 @@ $(document).on('click', '.skills-btn', function ($event) {
     console.log(payload)
 });
 
-$(".role-btn").click(($event) => {
+    $(".role-btn").click(($event) => {
     document.querySelectorAll(".role-btn").forEach(e => {
         
         if (e.classList.contains('selected-btn')) {

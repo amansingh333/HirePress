@@ -158,6 +158,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\apiController.cs" />
+    <Compile Include="Controllers\CandidateController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="CustomPasswordHasher.cs" />
     <Compile Include="Encrypt.cs" />
@@ -730,6 +731,7 @@
     <Content Include="Views\api\TestAPI.cshtml" />
     <Content Include="Views\Account\SuperAdmin.cshtml" />
     <Content Include="Views\Shared\_Aside.cshtml" />
+    <Content Include="Views\Candidate\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -90,7 +90,7 @@ namespace HirePress.Controllers
 
                     Session["Email"] = user.Email;
                     
-                    return RedirectToAction("Login");
+                    return RedirectToAction("OnBoard");
                 }
                 AddErrors(result);
             }

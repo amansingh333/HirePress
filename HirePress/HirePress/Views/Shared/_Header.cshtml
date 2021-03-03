@@ -44,11 +44,11 @@
 <div class="ml-auto d-flex">
     @if (Session["UserType"] == null)
     {
-        <div class="hidden-md-down">
+        @*<div class="hidden-md-down">
             <a href="/Account/OnBoard" class="header-icon color-primary-600 cursor-pointer header-list">
                 <span>ONBOARD</span>
             </a>
-        </div>
+        </div>*@
         <div class="hidden-md-down">
             <a href="/Account/Login" class="header-icon color-primary-600 cursor-pointer header-list">
                 <span>LOGIN</span>
@@ -61,7 +61,7 @@
         </div>
         <div class="hidden-md-down" style="margin-right:0px;">
             <a href="/Home/PostJob" class="header-icon color-primary-600 font-weight-bold cursor-pointer header-list-post">
-                <span>POST JOB</span>
+                <span>EMPLOYER</span>
             </a>
         </div>
     }
