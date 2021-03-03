@@ -281,7 +281,7 @@ namespace HirePress.Controllers
                 return Redirect(returnUrl);
             }
             if (role == "user")
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Candidate");
             else if(role == "admin")
                 return RedirectToAction("Admin");
             else

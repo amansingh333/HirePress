@@ -9,6 +9,7 @@ namespace HirePress.Controllers
     public class CandidateController : Controller
     {
         // GET: Candidate
+        [Authorize]
         public ActionResult Index()
         {
             return View();

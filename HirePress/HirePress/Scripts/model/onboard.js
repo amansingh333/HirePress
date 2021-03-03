@@ -1,163 +1,130 @@
-﻿
+﻿//onclick method on each skill type button
+function GetSkills(a) {
+    //remove btn-primary class from all and ass btn-light class
+    for (let i = 0; i < $('.role-btn').length; i++) {
+        $('.role-btn').removeClass('btn-primary').addClass('btn-light');
+    }
 
-$(document).ready(() => {
+    //add btn-primary class and remove btn-light class from selected button
+    $(a).addClass('btn-primary').removeClass('btn-light');
 
-
+    //make an ajax call to find selected skill's skill types
     $.ajax({
-        url: "/api/skills?skilltype=Frontend",
+        url: "/api/skills?skilltype=" + a.innerText,
         type: "GET",
         success: function (data) {
-            console.log(data)
+            //empty skills column
+            $('#skills_data').html('');
+
+            //add skills using data returned by the api call
+            for (let i = 0; i < data.length; i++) {
+                $('#skills_data').append('<button type="button" class="btn btn-light btn-pills waves-effect waves-themed skills-btn">' + data[i] + '</button>');
+            }
+
+            //show the hidden skills column
+            $('.step-2').show();
+
+            //select or unselect multiple skills
+            $('.skills-btn').click((a) => {
+                if ($(a.currentTarget).hasClass('btn-light'))
+                    $(a.currentTarget).addClass('btn-primary').removeClass('btn-light');
+                else
+                    $(a.currentTarget).removeClass('btn-primary').addClass('btn-light');
+
+                //check if any one skill is selected or not to disable or enable next button
+                var flag = false;
+                for (let i = 0; i < $('.skills-btn').length; i++) {
+                    if ($('.skills-btn').hasClass('btn-primary')) {
+                        flag = true;
+                        break;
+                    }
+                }
+                if (flag)
+                    $('.onStep1').prop('disabled', '');
+                else
+                    $('.onStep1').prop('disabled','disabled');
+            });
         },
         error: function (err) {
             alert(err.responseText);
         }
     });
-  
-var payload = {
-    step1: {
-        job_role: '',
-        skills: []
-    },
-    step2: {
-        cv: ''
-    },
-    step3: {
-        degree: '',
-        college: '',
-        specialization: '',
-        graduation_year: ''
+}
+
+//goto upload panel
+function UploadPanel() {
+    $('.step-1').hide();
+    $('.step-3').show();
+}
+
+//back to skill panel
+function SkillPanel() {
+    $('.step-1').show();
+    $('.step-3').hide();
+}
+
+//switch between upload and qualification panel
+function QualificationPanel(a) {
+    if (a.innerText === "NEXT") {
+        $('.step-3').hide();
+        $('.step-4').show();
+    }
+    else {
+        $('.step-4').hide();
+        $('.step-3').show();
     }
 }
 
-
-localStorage.setItem('curr_step', 1);
-localStorage.setItem('payload', JSON.stringify(payload));
-
-var currStep = 1;
-var lastStep = 1;
-
-    var Frontend = ['Angular', 'React', 'Vue', 'Javascript', 'Html', 'Css', 'Scss', 'Bootstrap', 'Foundation', 'Typescript' ]
-    var Backend = ['Python', 'NodeJS', 'Java', 'PHP']
-
-
-$('.step-2').hide()
-$('.step-3').hide()
-$('.step-4').hide()
-$('.step-1-next').addClass('disabled')
-
-
-$(".onStep1").click(function ($event) {
-    console.log($event)
-    $('.step-1').hide()
-    $('.step-2').hide()
-    $('.step-3').show()
-})
-
-
-
-$(".onStep2").click(function ($event) {
-    console.log($event)
-    $('.step-3').hide()
-    $('.step-4').show()
-
-});
-
-    $(".onStep3").click(function ($event) {
-        debugger;
-    var $inputs = $('#myForm :input');
-    console.log($inputs)
-    // not sure if you wanted this, but I thought I'd add it.
-    // get an associative array of just the values.
-    var values = {};
-    $inputs.each(function () {
-        values[this.name] = $(this).val();
-    });
-    payload.step3 = values;
-    console.log(payload);
-    location.href = "/Candidate/Index";
-});
-
-$(".backToStep1").click(function ($event) {
-    $('.step-3').hide()
-    $('.step-1').show()
-    $('.step-2').show()
-
-});
-
-$(".backToStep2").click(function ($event) {
-    console.log($event)
-    $('.step-4').hide()
-    $('.step-3').show()
-
-});
-
-// On cv upload
-
-$(".input-file").change(function ($event) {
-    console.log($event)
-    payload.step2.cv = $event.target.files[0]
-    console.log(payload)
-});
-
-  
-
-$(document).on('click', '.skills-btn', function ($event) {
-        if (($event.currentTarget).classList.contains('selected-btn')) {
-            ($event.currentTarget).classList.remove('selected-btn')
-            payload.step1.skills.forEach((e,index) => {
-                console.log(e)
-                if (e == $event.target.innerText) {
-                    payload.step1.skills.splice(index, 1)
-                    localStorage.setItem('payload', JSON.stringify(payload));
+//functionality to enable or disable Get Hired button using onchange and onkeyup method
+function CheckQualificationFields() {
+    if ($('#inputGroupSelect04').find(':selected').val() !== "Select Degree") {
+        if ($('#College').val() !== "") {
+            if ($('#Specialization').val() !== "") {
+                if ($('#Graduation_Year').val() !== "") {
+                    $('.onStep3').prop('disabled', '');
                 }
-            })
-        } else {
-            $($event.currentTarget).addClass('selected-btn');
-            payload.step1.skills.push($event.target.innerText);
-            localStorage.setItem('payload', JSON.stringify(payload));
+                else
+                    $('.onStep3').prop('disabled', 'disabled');
+            }
+            else
+                $('.onStep3').prop('disabled', 'disabled');
         }
-
-    $('.step-1-next').removeClass('disabled')
-
-    console.log(payload)
-});
-
-    $(".role-btn").click(($event) => {
-    document.querySelectorAll(".role-btn").forEach(e => {
-        
-        if (e.classList.contains('selected-btn')) {
-            console.log(e)
-            $('#skills_data').empty()
-            e.classList.remove('selected-btn');
-        }
-    })
-
-
-
-    fetch('https://localhost:44371/API/TestAPI?GetSkillsTypeData=Frontend')
-        .then(data => data.json())
-        .then(res => {
-            console.log(res)
-        })
-
-    $($event.currentTarget).addClass('selected-btn');
-    payload.step1.job_role = $event.target.innerText;
-    localStorage.setItem('payload', JSON.stringify(payload));
-    for (let i = 0; i < Frontend.length; i++) {
-        $('#skills_data').append('<button type="button" class="btn btn-light btn-pills waves-effect waves-themed skills-btn">' + Frontend[i] + '</button>');
+        else
+            $('.onStep3').prop('disabled', 'disabled');
     }
+    else
+        $('.onStep3').prop('disabled', 'disabled');
+}
 
-    currStep++
-    $('.step-2').show();
+//create data in json and send to server and successfully redirect to candidate home page 
+function SaveInformation() {
+    var jobrole = "";
+    var skills = [];
 
+    //get job role
+    for (let i = 0; i < $('.role-btn').length; i++) {
+        if ($($('.role-btn')[i]).hasClass('btn-primary'))
+            jobrole = $($('.role-btn')[i]).text();
+    }
+    //get all skills
+    for (let i = 0; i < $('.skills-btn').length; i++) {
+        if ($($('.skills-btn')[i]).hasClass('btn-primary'))
+            skills.push($($('.skills-btn')[i]).text());
+    }
+    //create json
+    var json = {
+        "JobRole": jobrole,
+        "Skills": skills,
+        "Qualification": {
+            "Degree": $('#inputGroupSelect04').find(':selected').text(),
+            "College": $('#College').val(),
+            "Specialization": $('#Specialization').val(),
+            "GraduationYear": $('#Graduation_Year').val()
+        }
+    };
+    //redirect to login page
+    location.href = "/Account/Login";
+}
 
-    console.log(payload)
-});
-
-
-
-
-});
 
 
