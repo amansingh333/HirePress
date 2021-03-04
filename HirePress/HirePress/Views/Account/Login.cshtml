@@ -3,32 +3,58 @@
 @{
     ViewBag.Title = "Login";
 }
-<div class="container theme">
-    <div class="col-sm-5 m-auto">
-        <div class="card border m-auto m-lg-0">
-            <div class="card-body">
-                <h2 class="text-center color-primary-600">LOGIN</h2>
-                <hr />
-                <p class="card-text text-center">Fresh start with Hire Press.</p>
-                <p class="text-center color-danger-300">@ViewBag.Message</p>
-                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
-                {
-                    @Html.AntiForgeryToken()
-                    @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
-                    <div class="form-group">
-                        <label class="form-label" for="email">Email</label>
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label" for="password">Password</label>
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
-                    <a href="javascript:void(0)" class="color-primary-900"><i class="fal fa-frown" aria-hidden="true"></i> Forget Password?</a>
-                    <button type="submit" class="btn btn-primary float-right color-white">LOGIN</button>
-                }
+
+
+
+<section id="content" class="section-padding mt-5 pt-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-md-6 col-xs-12">
+                <div class="page-login-form box">
+                    <h3>
+                        Login
+                    </h3>
+                    <p class="text-center color-danger-300">@ViewBag.Message</p>
+                    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
+                    { }
+                        <div class="login-form">
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="lni-user"></i>
+                                    @Html.AntiForgeryToken()
+                                    @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
+                                    @*<input type="text" id="sender-email" class="form-control" name="email" placeholder="Username">*@
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-icon">
+                                    <i class="lni-lock"></i>
+                                    @*<input type="password" class="form-control" placeholder="Password">*@
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Keep Me Signed In</label>
+                            </div>
+                            <button class="btn btn-common log-btn">Submit</button>
+                        </div>
+                    <ul class="form-links">
+                        <li class="text-center"><a href="register.html">Don't have an account?</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+
+
+
+
+
+
+
+
