@@ -32,12 +32,3 @@
         </div>
     </div>
 </div>
-@section scripts{
-    <script>
-        var message = "";
-        if ('@Session["Email"]' != '') {
-            message = 'Registered Successfully! A confirmation mail has been sent to your Email - @Session["Email"]';
-            Swal.fire(message);
-        }
-    </script>    
-}

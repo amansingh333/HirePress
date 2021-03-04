@@ -20,19 +20,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/16/2020 20:38:56</publishTime>
     </File>
     <File Include="bin/HirePress.dll">
-      <publishTime>02/28/2021 13:31:35</publishTime>
+      <publishTime>03/02/2021 00:25:45</publishTime>
     </File>
     <File Include="bin/HirePress.pdb">
-      <publishTime>02/28/2021 13:31:35</publishTime>
+      <publishTime>03/02/2021 00:25:45</publishTime>
     </File>
     <File Include="bin/HirePressCore.dll">
-      <publishTime>02/28/2021 11:15:23</publishTime>
+      <publishTime>03/02/2021 00:25:44</publishTime>
     </File>
     <File Include="bin/HirePressCore.dll.config">
       <publishTime>02/28/2021 00:24:51</publishTime>
     </File>
     <File Include="bin/HirePressCore.pdb">
-      <publishTime>02/28/2021 11:15:23</publishTime>
+      <publishTime>03/02/2021 00:25:44</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>02/28/2021 00:24:51</publishTime>
@@ -335,7 +335,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/28/2021 01:21:01</publishTime>
     </File>
     <File Include="Scripts/model/onboard.js">
-      <publishTime>02/28/2021 00:24:33</publishTime>
+      <publishTime>03/01/2021 23:10:05</publishTime>
     </File>
     <File Include="Scripts/model/test.js">
       <publishTime>02/28/2021 13:26:14</publishTime>
@@ -1877,13 +1877,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/28/2021 00:24:50</publishTime>
     </File>
     <File Include="Views/Account/OnBoard.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/01/2021 23:10:05</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
       <publishTime>02/28/2021 00:24:50</publishTime>
     </File>
     <File Include="Views/Account/SuperAdmin.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/01/2021 23:50:40</publishTime>
     </File>
     <File Include="Views/API/TestAPI.cshtml">
       <publishTime>02/28/2021 00:24:50</publishTime>
@@ -1903,17 +1903,20 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>02/22/2021 21:02:42</publishTime>
     </File>
+    <File Include="Views/Shared/_Aside.cshtml">
+      <publishTime>03/02/2021 00:21:59</publishTime>
+    </File>
     <File Include="Views/Shared/_Footer.cshtml">
       <publishTime>02/28/2021 00:24:50</publishTime>
     </File>
     <File Include="Views/Shared/_Header.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/02/2021 00:14:10</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>02/22/2021 21:59:01</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutHirePress.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/02/2021 00:00:25</publishTime>
     </File>
     <File Include="Views/Shared/_ScriptLoading.cshtml">
       <publishTime>02/28/2021 00:24:50</publishTime>
@@ -1934,7 +1937,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/28/2021 00:24:50</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>02/28/2021 11:15:29</publishTime>
+      <publishTime>03/02/2021 00:25:47</publishTime>
     </File>
   </ItemGroup>
 </Project>

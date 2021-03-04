@@ -1,15 +1,12 @@
 ﻿$(document).ready(() => {
-
-
     $.ajax({
-        url: "API/?GetSkillsTypeData=Frontend",
+        url: "/api/skills?skilltype=Frontend",
         type: "GET",
         success: function (data) {
-            return data
+            debugger;
         },
         error: function (err) {
             alert(err.responseText);
         }
     });
-
-})
+});

@@ -6,11 +6,8 @@
     color: white !important;
 }
 
-
-
-
 .upload-box {
-    height: 400px;
+    height: 307px;
     background-color: #f7f7f7;
     border: 4px dashed #ccc;
     border-radius: 1em;
@@ -19,7 +16,6 @@
     justify-content: center;
     text-align: center;
 }
-
 
 #upload-icon {
     width: 70px;
@@ -71,33 +67,6 @@
     border: 3px solid #555;
 }
 
-    /* Testing colored icons
-
-.file-icon[data-type^="pdf"] {
-  background: #d0f1fc;
-  border-color: #4a99db;
-}
-
-.file-icon[data-type^="pdf"]::before {
-  border-color: #fff #fff #4a99db #4a99db;
-}
-
-.file-icon[data-type^="pdf"]::after {
-  color: #4a99db;
-}
-
-.file-icon[data-type^="png"], .file-icon[data-type^="ai"] {
-  background: #ffefe0;
-  border-color: #ffaf59;
-}
-
-.file-icon[data-type^="png"]::before, .file-icon[data-type^="ai"]::before {
-  border-color: #fff #fff #ffaf59 #ffaf59;
-}
-
-.file-icon[data-type^="png"]::after, .file-icon[data-type^="ai"]::after {
-  color: #ffaf59;
-} */
 
     .file-icon::before {
         display: block;
@@ -187,4 +156,19 @@
 
 .complete {
     color: #66cd8c;
+}
+.onBack {
+    cursor: pointer;
+}
+
+button {
+    margin: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.pointer {
+    cursor: pointer;
 }
