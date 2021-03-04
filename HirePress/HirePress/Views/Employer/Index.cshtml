@@ -4,14 +4,10 @@
 }
 
 <style>
-    
-
     .page-content {
         padding: 0 !important
     }
-
     .employer-wrapper {
-        height: 90vh;
         width: 100vw;
         background: url('https://affixtheme.com/html/xmee/demo/img/figure/bg14-l.jpg');
         display: flex;
@@ -27,7 +23,6 @@
 
     .employer-child {
         border-radius: 10px;
-        box-shadow: 0 0 10px grey;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -35,17 +30,20 @@
 
     .employer-login-wrap {
         width: 30vw;
-        height: 80vh;
-        background: white;
+        min-height: 760px;
         padding: 3rem;
-        background: rgba(0,0,0,0.6);
+        background: rgb(5 109 22 / 75%);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
     }
 
     .employer-signup-wrap {
         padding: 3rem;
         width: 30vw;
-        height: 80vh;
+        min-height: 760px;
         background: white;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
 
     .w-100{
@@ -53,20 +51,11 @@
     }
 </style>
 
-
-
-
-
-
-
-
-
 <div class="employer-wrapper">
-    <div class="employer-child">
+    <div class="employer-child theme">
         <div class="employer-login-wrap">
-            <h2 class="text-left color-white">Login</h2>
+            <h2 class="text-left color-white" style="color:white !important">Login</h2>
             <hr />
-
             <div class="form-group mt-5">
                 <label class="form-label" for="email">Email</label>
                 <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
@@ -75,7 +64,7 @@
                 <label class="form-label" for="password">Password</label>
                 <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
             </div>
-            <a href="javascript:void(0)" class="color-white"><i class="fal fa-frown" aria-hidden="true"></i> Forget Password?</a> <br>
+            <a href="javascript:void(0)" class="color-white" style="color:white !important"><i class="fal fa-frown" aria-hidden="true"></i> Forget Password?</a> <br>
             <button type="submit" class="btn btn-primary w-100 color-white mt-5">LOGIN</button>
         </div>
         <div class="employer-signup-wrap">
@@ -108,5 +97,4 @@
         </div>
     </div>
     
-   
 </div>

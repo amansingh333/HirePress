@@ -123,18 +123,24 @@
                             }
                             else
                             {
-                            <li class="nav-item">
-                                <a class="nav-link" href="/Account/Login">
-                                    Login
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/Account/Register">Sign Up</a>
-                            </li>
+                                if (ViewBag.Title != "Employer - Signin")
+                                {
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/Account/Login">
+                                            Login
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/Account/Register">Sign Up</a>
+                                    </li>
+                                }
                             }
-                            <li class="button-group">
-                                <a href="/Employer/Index" class="button btn btn-common">Employer</a>
-                            </li>
+                            @if (ViewBag.Title != "Employer - Signin")
+                            {
+                                <li class="button-group">
+                                    <a href="/Employer/Index" class="button btn btn-common">Employer</a>
+                                </li>
+                            }
                         </ul>
                     </div>
                 </div>
