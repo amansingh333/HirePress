@@ -13,5 +13,9 @@ namespace HirePress.Controllers
         {
             return View();
         }
+        public ActionResult PostJob()
+        {
+            return View();
+        }
     }
 }
