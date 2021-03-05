@@ -4,8 +4,6 @@
     ViewBag.Title = "Login";
 }
 
-
-
 <section id="content" class="section-padding mt-5 pt-5">
     <div class="container">
         <div class="row justify-content-center">
@@ -16,14 +14,12 @@
                     </h3>
                     <p class="text-center color-danger-300">@ViewBag.Message</p>
                     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { role = "form" }))
-                    { }
+                    { 
                         <div class="login-form">
                             <div class="form-group">
                                 <div class="input-icon">
                                     <i class="lni-user"></i>
                                     @Html.AntiForgeryToken()
-                                    @*@Html.ValidationSummary("", new { @class = "text-danger" })*@
-                                    @*<input type="text" id="sender-email" class="form-control" name="email" placeholder="Username">*@
                                     @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email" })
                                     @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                                 </div>
@@ -31,7 +27,6 @@
                             <div class="form-group">
                                 <div class="input-icon">
                                     <i class="lni-lock"></i>
-                                    @*<input type="password" class="form-control" placeholder="Password">*@
                                     @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Password" })
                                     @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                                 </div>
@@ -40,10 +35,11 @@
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Keep Me Signed In</label>
                             </div>
-                            <button class="btn btn-common log-btn">Submit</button>
+                            <button type="submit" class="btn btn-common log-btn">Submit</button>
                         </div>
+                    }
                     <ul class="form-links">
-                        <li class="text-center"><a href="register.html">Don't have an account?</a></li>
+                        <li class="text-center"><a href="/Account/Register">Don't have an account?</a></li>
                     </ul>
                 </div>
             </div>

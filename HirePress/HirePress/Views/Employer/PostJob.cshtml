@@ -1,27 +1,8 @@
-﻿
-
-
-@{
+﻿@{
     ViewBag.Title = "Post Job";
 }
 
-<link rel="stylesheet" href="~/Theme/homepage-assets/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/Theme/homepage-assets/assets/css/line-icons.css">
-    <link rel="stylesheet" href="~/Theme/homepage-assets/assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="~/Theme/homepage-assets/assets/css/owl.theme.default.css">
-    <link rel="stylesheet" href="~/Theme/homepage-assets/assets/css/slicknav.min.css">
-    <link rel="stylesheet" href="~/Theme/homepage-assets/assets/css/animate.css">
-    <link rel="stylesheet" href="~/Theme/homepage-assets/assets/css/summernote.css">
-    <link rel="stylesheet" href="~/Theme/homepage-assets/assets/css/main.css">
-    <link rel="stylesheet" href="~/Theme/homepage-assets/assets/css/responsive.css">
-
 <div class="theme container">
-
-
-
-
-
-
     <section class="section">
         <div class="container">
             <div class="row justify-content-center">
@@ -110,30 +91,14 @@
         </div>
     </section>
 
-
-
-
-
-    <script src="~/Theme/homepage-assets/assets/js/jquery-min.js"></script>
-        <script src="~/Theme/homepage-assets/assets/js/popper.min.js"></script>
-        <script src="~/Theme/homepage-assets/assets/js/bootstrap.min.js"></script>
-        <script src="~/Theme/homepage-assets/assets/js/color-switcher.js"></script>
-        <script src="~/Theme/homepage-assets/assets/js/owl.carousel.min.js"></script>
-        <script src="~/Theme/homepage-assets/assets/js/jquery.slicknav.js"></script>
-        <script src="~/Theme/homepage-assets/assets/js/jquery.counterup.min.js"></script>
-        <script src="~/Theme/homepage-assets/assets/js/waypoints.min.js"></script>
-        <script src="~/Theme/homepage-assets/assets/js/form-validator.min.js"></script>
-        <script src="~/Theme/homepage-assets/assets/js/contact-form-script.js"></script>
-        <script src="~/Theme/homepage-assets/assets/js/summernote.js"></script>
-        <script src="~/Theme/homepage-assets/assets/js/main.js"></script>
-    <script>
-            $('#summernote').summernote({
-                height: 350,                 // set editor height
-                minHeight: null,             // set minimum height of editor
-                maxHeight: null,             // set maximum height of editor
-                focus: false                  // set focus to editable area after initializing summernote
-            });
-        </script>
-
-
 </div>
+@section scripts{
+    <script>
+        $('#summernote').summernote({
+            height: 350,                 // set editor height
+            minHeight: null,             // set minimum height of editor
+            maxHeight: null,             // set maximum height of editor
+            focus: false                  // set focus to editable area after initializing summernote
+        });
+    </script>
+}

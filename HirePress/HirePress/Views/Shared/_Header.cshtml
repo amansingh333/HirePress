@@ -1,127 +1,180 @@
-﻿<style>
-    .header-list {
-        font-size: 1rem;
-    }
-    /*.header-list:hover {
-            color: #318c38;
-        }*/
-    .header-list-post {
-        font-size: 1.2rem;
-    }
+﻿<header id="home" class="hero-area">
+    <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+        <div class="container">
+            <div class="theme-header clearfix">
 
-        /*.header-list-post:hover {
-            color: #318c38;
-        }*/
-        .header-list-post span {
-            border: 1px solid #6e4e9e;
-            border-radius: 5px;
-            padding: 4px;
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        <span class="lni-menu"></span>
+                        <span class="lni-menu"></span>
+                        <span class="lni-menu"></span>
+                    </button>
+                    <a href="/Home/Index" class="navbar-brand"><img src="~/Theme/homepage-assets/assets/img/logo.png" alt=""></a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-navbar">
+                    <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                        @*<li class="nav-item dropdown active">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Home
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
+                                    <li><a class="dropdown-item" href="index-2.html">Home 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Pages
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="about.html">About</a></li>
+                                    <li><a class="dropdown-item" href="job-page.html">Job Page</a></li>
+                                    <li><a class="dropdown-item" href="job-details.html">Job Details</a></li>
+                                    <li><a class="dropdown-item" href="resume.html">Resume Page</a></li>
+                                    <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                                    <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                    <li><a class="dropdown-item" href="pricing.html">Pricing Tables</a></li>
+                                    <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Candidates
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="browse-jobs.html">Browse Jobs</a></li>
+                                    <li><a class="dropdown-item" href="browse-categories.html">Browse Categories</a></li>
+                                    <li><a class="dropdown-item" href="add-resume.html">Add Resume</a></li>
+                                    <li><a class="dropdown-item" href="manage-resumes.html">Manage Resumes</a></li>
+                                    <li><a class="dropdown-item" href="job-alerts.html">Job Alerts</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Employers
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="post-job.html">Add Job</a></li>
+                                    <li><a class="dropdown-item" href="manage-jobs.html">Manage Jobs</a></li>
+                                    <li><a class="dropdown-item" href="manage-applications.html">Manage Applications</a></li>
+                                    <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Blog
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="blog.html">Blog - Right Sidebar</a></li>
+                                    <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
+                                    <li><a class="dropdown-item" href="blog-full-width.html"> Blog full width</a></li>
+                                    <li><a class="dropdown-item" href="single-post.html">Blog Single Post</a></li>
+                                </ul>
+                            </li>*@
+                        @if (Session["UserType"] != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" style="color:#26ae61;cursor:text;" href="javascript:void()">
+                                    @Session["UserName"]
+                                </a>
+                            </li>
+                            if (Session["UserAdmin"] != null)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Account/Admin">
+                                        Admin
+                                    </a>
+                                </li>
+                            }
+                            if (Session["UserSuperAdmin"] != null)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Account/SuperAdmin">Super Admin</a>
+                                </li>
+                            }
+                            <li class="nav-item">
+                                <a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                            </li>
+                        }
+                        else
+                        {
+                            if (ViewBag.Title != "Employer - Signin")
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Account/Login">
+                                        Login
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/Account/Register">Sign Up</a>
+                                </li>
+                            }
+                        }
+                        @if (ViewBag.Title != "Employer - Signin")
+                        {
+                            <li class="button-group">
+                                <a href="/Employer/Index" class="button btn btn-common" target="_blank">Employer</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu" data-logo="/Theme/homepage-assets/assets/img/logo-mobile.png"></div>
+        @using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm" }))
+        {
+            @Html.AntiForgeryToken()
         }
-
-            .header-list-post span:hover {
-                border: 1px solid #6e4e9e;
-            }
-
-    .hidden-md-down {
-        margin-right: 20px;
-    }
-
-    .page-header {
-        margin-left: 0px !important;
-    }
-</style>
-<!-- BEGIN Page Header -->
-<header class="page-header" role="banner">
-    <a href="/Home/Index" class="page-logo-link d-flex align-items-center position-relative">
-        <span class="page-logo-text mr-1 color-primary-600" style="font-weight:400;font-size:1.5rem;">HIRE PRESS</span>
-        <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
-    </a>
-    <div class="hidden-lg-up" style="margin-left:auto;">
-        <a href="#" class="header-btn btn press-scale-down" data-action="toggle" data-class="mobile-nav-on">
-            <i class="ni ni-menu"></i>
-        </a>
-    </div>
-<div class="ml-auto d-flex">
-    @if (Session["UserType"] == null)
+    </nav>
+    @if (ViewBag.Title == "Home")
     {
-        @*<div class="hidden-md-down">
-            <a href="/Account/OnBoard" class="header-icon color-primary-600 cursor-pointer header-list">
-                <span>ONBOARD</span>
-            </a>
-        </div>*@
-        <div class="hidden-md-down">
-            <a href="/Account/Login" class="header-icon color-primary-600 cursor-pointer header-list">
-                <span>LOGIN</span>
-            </a>
-        </div>
-        <div class="hidden-md-down">
-            <a href="/Account/Register" class="header-icon color-primary-600 cursor-pointer header-list">
-                <span>REGISTER</span>
-            </a>
-        </div>
-        <div class="hidden-md-down" style="margin-right:0px;">
-            <a href="/Employer/Index" class="header-icon color-primary-600 font-weight-bold cursor-pointer header-list-post">
-                <span>EMPLOYER</span>
-            </a>
-        </div>
-    }
-    <!-- app user menu -->
-    @if (Session["UserType"] != null)
-    {
-        <div>
-            <a href="#" data-toggle="dropdown" title="drlantern@gotbootstrap.com" class="header-icon d-flex align-items-center justify-content-center ml-2">
-                <img src="~/Theme/img/demo/avatars/avatar-admin.png" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
-                <!-- you can also add username next to the avatar with the codes below:
-                <span class="ml-1 mr-1 text-truncate text-truncate-header hidden-xs-down">Me</span>
-                <i class="ni ni-chevron-down hidden-xs-down"></i> -->
-            </a>
-            <div class="dropdown-menu dropdown-menu-animated dropdown-lg">
-                <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
-                    <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
-                        <span class="mr-2">
-                            <img src="~/Theme/img/demo/avatars/avatar-admin.png" class="rounded-circle profile-image" alt="Dr. Codex Lantern">
-                        </span>
-                        <div class="info-card-text">
-                            <div class="fs-lg text-truncate text-truncate-lg">@Session["UserName"]</div>
-                            <span class="text-truncate text-truncate-md opacity-80">@Session["UserEmail"]</span>
+        <div class="container">
+            <div class="row space-100">
+                <div class="col-lg-7 col-md-12 col-xs-12">
+                    <div class="contents">
+                        <h2 class="head-title">Find the <br> job that fits your life</h2>
+                        <p>Aliquam vestibulum cursus felis. In iaculis iaculis sapien ac condimentum. Vestibulum congue posuere lacus, id tincidunt nisi porta sit amet. Suspendisse et sapien varius, pellentesque dui non.</p>
+                        <div class="job-search-form">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-5 col-xs-12">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" placeholder="Job Title or Company Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5 col-md-5 col-xs-12">
+                                        <div class="form-group">
+                                            <div class="search-category-container">
+                                                <label class="styled-select">
+                                                    <select>
+                                                        <option value="none">Locations</option>
+                                                        <option value="none">New York</option>
+                                                        <option value="none">California</option>
+                                                        <option value="none">Washington</option>
+                                                        <option value="none">Birmingham</option>
+                                                        <option value="none">Chicago</option>
+                                                        <option value="none">Phoenix</option>
+                                                    </select>
+                                                </label>
+                                            </div>
+                                            <i class="lni-map-marker"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-2 col-xs-12">
+                                        <button type="submit" class="button"><i class="lni-search"></i></button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div class="dropdown-divider m-0"></div>
-                @*<a href="#" class="dropdown-item" data-action="app-reset">
-                        <span data-i18n="drpdwn.reset_layout">Reset Layout</span>
-                    </a>*@
-                <a href="#" class="dropdown-item" data-toggle="modal" data-target=".js-modal-settings">
-                    <span data-i18n="drpdwn.settings">Settings</span>
-                </a>
-                <div class="dropdown-divider m-0"></div>
-                @if (Session["UserAdmin"] != null)
-                {
-                    <a href="/Account/Admin" class="dropdown-item">
-                        <span>Admin</span>
-                    </a>
-                    <div class="dropdown-divider m-0"></div>
-                }
-                @if (Session["UserSuperAdmin"] != null)
-                {
-                    <a href="/Account/SuperAdmin" class="dropdown-item">
-                        <span>Super Admin</span>
-                    </a>
-                    <div class="dropdown-divider m-0"></div>
-                }
-               
-                <div class="dropdown-divider m-0"></div>
-                <a class="dropdown-item fw-500 pt-3 pb-3" href="javascript:document.getElementById('logoutForm').submit()">
-                    <span data-i18n="drpdwn.page-logout">Logout</span>
-                    <span class="float-right fw-n">&commat;@Session["UserName"]</span>
-                </a>
-                @using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm" }))
-                {
-                    @Html.AntiForgeryToken()
-                }
+                <div class="col-lg-5 col-md-12 col-xs-12">
+                    <div class="intro-img">
+                        <img src="~/Theme/homepage-assets/assets/img/intro.png" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     }
-</div>
 </header>
-<!-- END Page Header -->

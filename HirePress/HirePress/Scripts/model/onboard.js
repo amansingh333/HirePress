@@ -1,12 +1,12 @@
 ﻿//onclick method on each skill type button
 function GetSkills(a) {
-    //remove btn-primary class from all and ass btn-light class
+    //remove btn-primary class from all and ass btn-border class
     for (let i = 0; i < $('.role-btn').length; i++) {
-        $('.role-btn').removeClass('btn-primary').addClass('btn-light');
+        $('.role-btn').removeClass('btn-primary').addClass('btn-border');
     }
 
-    //add btn-primary class and remove btn-light class from selected button
-    $(a).addClass('btn-primary').removeClass('btn-light');
+    //add btn-primary class and remove btn-border class from selected button
+    $(a).addClass('btn-primary').removeClass('btn-border');
 
     //make an ajax call to find selected skill's skill types
     $.ajax({
@@ -18,7 +18,7 @@ function GetSkills(a) {
 
             //add skills using data returned by the api call
             for (let i = 0; i < data.length; i++) {
-                $('#skills_data').append('<button type="button" class="btn btn-light btn-pills waves-effect waves-themed skills-btn">' + data[i] + '</button>');
+                $('#skills_data').append('<button type="button" class="btn btn-border btn-pills waves-effect waves-themed skills-btn">' + data[i] + '</button>');
             }
 
             //show the hidden skills column
@@ -26,10 +26,10 @@ function GetSkills(a) {
 
             //select or unselect multiple skills
             $('.skills-btn').click((a) => {
-                if ($(a.currentTarget).hasClass('btn-light'))
-                    $(a.currentTarget).addClass('btn-primary').removeClass('btn-light');
+                if ($(a.currentTarget).hasClass('btn-border'))
+                    $(a.currentTarget).addClass('btn-primary').removeClass('btn-border');
                 else
-                    $(a.currentTarget).removeClass('btn-primary').addClass('btn-light');
+                    $(a.currentTarget).removeClass('btn-primary').addClass('btn-border');
 
                 //check if any one skill is selected or not to disable or enable next button
                 var flag = false;
