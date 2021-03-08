@@ -6,14 +6,15 @@ using System.Web.Mvc;
 
 namespace HirePress.Controllers
 {
-    [RoutePrefix("")]
+    //[RoutePrefix("job")]
     public class JobController : Controller
     {
         // GET: Job
-        [Route("{Alias?}")]
-        public ActionResult Index(string Alias)
+        //[Route("{Alias?}")]
+        public ActionResult Index()
         {
-            ViewBag.Alias = Alias;
+            Uri uri = new Uri(System.Web.HttpContext.Current.Request.Url.AbsoluteUri);
+            ViewBag.Alias = uri.PathAndQuery;
             return View();
         }
     }
