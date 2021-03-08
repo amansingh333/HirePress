@@ -18,6 +18,7 @@ namespace HirePressCore.DataAccess
         public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
         public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual DbSet<MasterJob> MasterJobs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

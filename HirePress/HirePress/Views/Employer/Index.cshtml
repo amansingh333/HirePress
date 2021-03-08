@@ -21,15 +21,8 @@
         color: #444;
     }
 
-    .employer-child {
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     .employer-login-wrap {
-        width: 30vw;
+        width: 100%;
         min-height: 760px;
         padding: 3rem;
         background: rgb(5 109 22 / 75%);
@@ -39,7 +32,7 @@
 
     .employer-signup-wrap {
         padding: 3rem;
-        width: 30vw;
+        width: 100%;
         min-height: 760px;
         background: white;
         border-top-right-radius: 10px;
@@ -49,52 +42,60 @@
     .w-100{
         width: 100%;
     }
+    .slicknav_btn {
+        display: none !important;
+    }
 </style>
 
 <div class="employer-wrapper">
-    <div class="employer-child theme">
-        <div class="employer-login-wrap">
-            <h2 class="text-left color-white" style="color:white !important">Login</h2>
-            <hr />
-            <div class="form-group mt-5">
-                <label class="form-label" for="email">Email</label>
-                <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
+    <div class="theme">
+        <div class="row">
+            <div class="col-sm-6" style="padding-right: 0px;width:500px;">
+                <div class="employer-login-wrap">
+                    <h2 class="text-left color-white" style="color:white !important">Login</h2>
+                    <hr />
+                    <div class="form-group mt-5">
+                        <label class="form-label" for="email">Email</label>
+                        <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
+                    </div>
+                    <a href="javascript:void(0)" class="color-white" style="color:white !important"><i class="fal fa-frown" aria-hidden="true"></i> Forget Password?</a> <br>
+                    <button type="submit" class="btn btn-primary w-100 color-white mt-5">LOGIN</button>
+                </div>
             </div>
-            <div class="form-group">
-                <label class="form-label" for="password">Password</label>
-                <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
+            <div class="col-sm-6" style="padding-left: 0px;width:500px;">
+                <div class="employer-signup-wrap">
+                    <h2 class="mb-4">Signup</h2>
+                    <div class="form-group">
+                        <label class="form-label" for="College">Full Name</label>
+                        <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="Specialization">Mobile Number</label>
+                        <input name="specialization" type="text" id="Specialization" class="form-control" onkeyup="CheckQualificationFields()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="Graduation_Year">Company Email</label>
+                        <input name="graduation_year" type="text" id="Graduation_Year" class="form-control" onkeyup="CheckQualificationFields()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="College">Password</label>
+                        <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="Specialization">Confirm Password</label>
+                        <input name="specialization" type="text" id="Specialization" class="form-control" onkeyup="CheckQualificationFields()">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="College">Referral Code</label>
+                        <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100 color-white mt-5">REGISTER</button>
+                </div>
             </div>
-            <a href="javascript:void(0)" class="color-white" style="color:white !important"><i class="fal fa-frown" aria-hidden="true"></i> Forget Password?</a> <br>
-            <button type="submit" class="btn btn-primary w-100 color-white mt-5">LOGIN</button>
-        </div>
-        <div class="employer-signup-wrap">
-            <h2 class="mb-4">Signup</h2>
-            <div class="form-group">
-                <label class="form-label" for="College">Full Name</label>
-                <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="Specialization">Mobile Number</label>
-                <input name="specialization" type="text" id="Specialization" class="form-control" onkeyup="CheckQualificationFields()">
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="Graduation_Year">Company Email</label>
-                <input name="graduation_year" type="text" id="Graduation_Year" class="form-control" onkeyup="CheckQualificationFields()">
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="College">Password</label>
-                <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="Specialization">Confirm Password</label>
-                <input name="specialization" type="text" id="Specialization" class="form-control" onkeyup="CheckQualificationFields()">
-            </div>
-            <div class="form-group">
-                <label class="form-label" for="College">Referral Code</label>
-                <input name="college" type="text" id="College" class="form-control" onkeyup="CheckQualificationFields()">
-            </div>
-            <button type="submit" class="btn btn-primary w-100 color-white mt-5">REGISTER</button>
         </div>
     </div>
-    
 </div>

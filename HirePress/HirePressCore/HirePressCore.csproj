@@ -64,10 +64,12 @@
     <Compile Include="DataAccess\AspNetUserClaim.cs" />
     <Compile Include="DataAccess\AspNetUserLogin.cs" />
     <Compile Include="DataAccess\HirePressEntity.cs" />
+    <Compile Include="DataAccess\MasterJob.cs" />
     <Compile Include="DataAccess\MasterSkills.cs" />
     <Compile Include="DataAccess\MasterFlags.cs" />
     <Compile Include="Model\AccountViewModel.cs" />
     <Compile Include="Model\IdentityModels.cs" />
+    <Compile Include="Model\MasterJobModel.cs" />
     <Compile Include="Model\MasterSkillsModel.cs" />
     <Compile Include="Model\MasterFlagsModel.cs" />
     <Compile Include="Partial\GetAPI.cs" />
