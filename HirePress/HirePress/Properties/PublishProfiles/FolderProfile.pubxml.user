@@ -20,19 +20,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/16/2020 20:38:56</publishTime>
     </File>
     <File Include="bin/HirePress.dll">
-      <publishTime>03/02/2021 00:25:45</publishTime>
+      <publishTime>03/05/2021 23:26:48</publishTime>
     </File>
     <File Include="bin/HirePress.pdb">
-      <publishTime>03/02/2021 00:25:45</publishTime>
+      <publishTime>03/05/2021 23:26:48</publishTime>
     </File>
     <File Include="bin/HirePressCore.dll">
-      <publishTime>03/02/2021 00:25:44</publishTime>
+      <publishTime>03/05/2021 23:26:47</publishTime>
     </File>
     <File Include="bin/HirePressCore.dll.config">
       <publishTime>02/28/2021 00:24:51</publishTime>
     </File>
     <File Include="bin/HirePressCore.pdb">
-      <publishTime>03/02/2021 00:25:44</publishTime>
+      <publishTime>03/05/2021 23:26:47</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>02/28/2021 00:24:51</publishTime>
@@ -269,7 +269,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/28/2021 00:24:32</publishTime>
     </File>
     <File Include="Content/model/onboard.css">
-      <publishTime>02/28/2021 00:24:32</publishTime>
+      <publishTime>03/04/2021 21:02:31</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>02/22/2021 21:02:42</publishTime>
@@ -332,13 +332,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/22/2021 21:02:59</publishTime>
     </File>
     <File Include="Scripts/model/admin.js">
-      <publishTime>02/28/2021 01:21:01</publishTime>
+      <publishTime>03/02/2021 00:58:11</publishTime>
     </File>
     <File Include="Scripts/model/onboard.js">
-      <publishTime>03/01/2021 23:10:05</publishTime>
+      <publishTime>03/05/2021 22:53:38</publishTime>
     </File>
     <File Include="Scripts/model/test.js">
-      <publishTime>02/28/2021 13:26:14</publishTime>
+      <publishTime>03/02/2021 22:41:24</publishTime>
     </File>
     <File Include="Scripts/modernizr-2.8.3.js">
       <publishTime>02/22/2021 21:02:58</publishTime>
@@ -798,6 +798,261 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Theme/css/vendors.bundle.css.map">
       <publishTime>02/28/2021 00:24:37</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/animate.css">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/bootstrap.min.css">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/common.css">
+      <publishTime>03/04/2021 23:19:17</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/font/summernote4c4d.eot">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/font/summernote4c4d.ttf">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/font/summernote4c4d.woff">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/font/summernoted41d.eot">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/line-icons.css">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/main.css">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/owl.carousel.min.css">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/owl.theme.default.css">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/owl.video.play.html">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/responsive.css">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/slicknav.min.css">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/css/summernote.css">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/fonts/LineIcons0ad2.eot">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/fonts/LineIcons0ad2.svg">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/fonts/LineIcons0ad2.ttf">
+      <publishTime>03/04/2021 21:28:09</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/fonts/LineIcons0ad2.woff">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/about/company-logo.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/about/img1.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/app.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/banner1.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/blog/blog1.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/blog/blog2.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/blog/blog3.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/blog/img1.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/blog/img2.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/blog/img3.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/blog/user1.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/blog/user2.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/blog/user3.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/catagories/img1.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/catagories/img2.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/catagories/img3.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/catagories/img4.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/catagories/img5.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/catagories/img6.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/features/img1.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/features/img2.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/features/img3.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/features/img4.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/features/img5.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/features/img6.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/intro.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/avatar-1.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/avatar-1.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/avatar-2.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/avatar-3.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/avatar-4.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/candidates.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/img-1.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/img-2.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/img-3.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/img-4.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/img-5.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/jobs/img-6.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/logo-footer.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/logo-mobile.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/logo.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/product/img1.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/product/img2.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/product/img3.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/resume/img-1.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/search.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/slider/bg-1.jpg">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/slider/img-1.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/slider/img-2.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/slider/img-3.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/sub.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/testimonial/img1.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/testimonial/img2.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/img/testimonial/img3.png">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/bootstrap.min.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/color-switcher.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/contact-form-script.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/form-validator.min.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/jquery-min.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/jquery.counterup.min.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/jquery.slicknav.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/main.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/owl.carousel.min.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/popper.min.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/summernote.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
+    </File>
+    <File Include="Theme/homepage-assets/assets/js/waypoints.min.js">
+      <publishTime>03/04/2021 21:28:10</publishTime>
     </File>
     <File Include="Theme/img/backgrounds/bg-1.png">
       <publishTime>02/28/2021 00:24:37</publishTime>
@@ -1868,25 +2123,34 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/28/2021 00:24:50</publishTime>
     </File>
     <File Include="Views/Account/Admin.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/05/2021 23:11:08</publishTime>
     </File>
     <File Include="Views/Account/ConfirmEmail.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/04/2021 22:21:18</publishTime>
     </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/05/2021 22:13:05</publishTime>
     </File>
     <File Include="Views/Account/OnBoard.cshtml">
-      <publishTime>03/01/2021 23:10:05</publishTime>
+      <publishTime>03/05/2021 22:53:11</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/05/2021 22:35:36</publishTime>
     </File>
     <File Include="Views/Account/SuperAdmin.cshtml">
-      <publishTime>03/01/2021 23:50:40</publishTime>
+      <publishTime>03/05/2021 23:20:44</publishTime>
     </File>
     <File Include="Views/API/TestAPI.cshtml">
       <publishTime>02/28/2021 00:24:50</publishTime>
+    </File>
+    <File Include="Views/Candidate/Index.cshtml">
+      <publishTime>03/04/2021 22:20:31</publishTime>
+    </File>
+    <File Include="Views/Employer/Index.cshtml">
+      <publishTime>03/04/2021 23:08:11</publishTime>
+    </File>
+    <File Include="Views/Employer/PostJob.cshtml">
+      <publishTime>03/05/2021 23:23:42</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>02/22/2021 21:02:42</publishTime>
@@ -1895,7 +2159,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/22/2021 21:02:42</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/04/2021 22:10:20</publishTime>
     </File>
     <File Include="Views/Home/PostJob.cshtml">
       <publishTime>02/28/2021 00:24:50</publishTime>
@@ -1907,10 +2171,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/02/2021 00:21:59</publishTime>
     </File>
     <File Include="Views/Shared/_Footer.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/05/2021 23:15:49</publishTime>
     </File>
     <File Include="Views/Shared/_Header.cshtml">
-      <publishTime>03/02/2021 00:14:10</publishTime>
+      <publishTime>03/05/2021 23:15:26</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>02/22/2021 21:59:01</publishTime>
@@ -1918,14 +2182,17 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Shared/_LayoutHirePress.cshtml">
       <publishTime>03/02/2021 00:00:25</publishTime>
     </File>
+    <File Include="Views/Shared/_LayoutHome.cshtml">
+      <publishTime>03/05/2021 23:17:20</publishTime>
+    </File>
     <File Include="Views/Shared/_ScriptLoading.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/05/2021 23:22:32</publishTime>
     </File>
     <File Include="Views/Shared/_SettingsModal.cshtml">
       <publishTime>02/28/2021 00:24:50</publishTime>
     </File>
     <File Include="Views/Shared/_StylesLoading.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/05/2021 23:22:53</publishTime>
     </File>
     <File Include="Views/Shared/_ThemeSettings.cshtml">
       <publishTime>02/28/2021 00:24:50</publishTime>
@@ -1934,10 +2201,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/22/2021 21:02:42</publishTime>
     </File>
     <File Include="Views/_ViewStart.cshtml">
-      <publishTime>02/28/2021 00:24:50</publishTime>
+      <publishTime>03/04/2021 22:08:25</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/02/2021 00:25:47</publishTime>
+      <publishTime>03/05/2021 23:26:52</publishTime>
     </File>
   </ItemGroup>
 </Project>
