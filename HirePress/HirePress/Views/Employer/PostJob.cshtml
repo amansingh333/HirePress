@@ -12,21 +12,21 @@
                         <form class="form-ad">
                             <div class="form-group">
                                 <label class="control-label">Job Title</label>
-                                <input type="text" class="form-control" placeholder="Write job title">
+                                <input type="text" class="form-control" id="jobTitleId" name="JobTitle" placeholder="Write job title" onkeyup="manage()">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Company</label>
-                                <input type="text" class="form-control" placeholder="Write company name">
+                                <input type="text" class="form-control" id="companyId" name="Company" placeholder="Write company name" onkeyup="manage()">
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Location <span>(optional)</span></label>
-                                <input type="text" class="form-control" placeholder="e.g.London">
+                                <label class="control-label">Location</label>
+                                <input type="text" class="form-control" id="locationId" name="Location" placeholder="e.g.London" onkeyup="manage()">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Category</label>
                                 <div class="search-category-container">
                                     <label class="styled-select">
-                                        <select class="dropdown-product selectpicker">
+                                        <select class="dropdown-product selectpicker" name="Category">
                                             <option>All Categories</option>
                                             <option>Finance</option>
                                             <option>IT & Engineering</option>
@@ -41,8 +41,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="control-label">Education <span>(optional)</span></label>
+                                <input type="text" class="form-control" id="Education" name="Education" placeholder="e.g.BE/Btech" >
+                            </div>
+                            <div class="form-group">
                                 <label class="control-label">Job Tags <span>(optional)</span></label>
-                                <input type="text" class="form-control" placeholder="e.g.PHP,Social Media,Management">
+                                <input type="text" class="form-control" name="JobTags" placeholder="e.g.PHP,Social Media,Management">
                                 <p class="note">Comma separate tags, such as required skills or technologies, for this job.</p>
                             </div>
                             <div class="form-group">
@@ -53,37 +57,42 @@
                             </section>
                             <div class="form-group">
                                 <label class="control-label">Application email / URL</label>
-                                <input type="text" class="form-control" placeholder="Enter an email address or website URL">
+                                <input type="text" class="form-control" name="ApplicationEmail" placeholder="Enter an email address or website URL">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Closing Date <span>(optional)</span></label>
-                                <input type="text" class="form-control" placeholder="yyyy-mm-dd">
+                                <input type="date" class="form-control" name="ClosingDate" placeholder="yyyy-mm-dd">
                             </div>
                             <div class="divider">
                                 <h3 class="job-title">Company Details</h3>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Company Name</label>
-                                <input type="text" class="form-control" placeholder="Enter the name of the company">
+                                <input type="text" class="form-control" name="CompanyName" placeholder="Enter the name of the company">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Website <span>(optional)</span></label>
-                                <input type="text" class="form-control" placeholder="http://">
+                                <input type="text" class="form-control" name="Website" placeholder="http://">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Tagline <span>(optional)</span></label>
-                                <input type="text" class="form-control" placeholder="Briefly describe your company">
+                                <input type="text" class="form-control" name="Tagline" placeholder="Briefly describe your company">
                             </div>
-                            <div class="form-group">
-                                <label class="control-label">Tagline <span>(optional)</span></label>
-                                <input type="text" class="form-control" placeholder="Briefly describe your company">
-                            </div>
-                            <div class="custom-file mb-3">
-                                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                                <label class="custom-file-label form-control" for="validatedCustomFile">Choose file...</label>
-                                <div class="invalid-feedback">Example invalid custom file feedback</div>
-                            </div>
-                            <a href="#" class="btn btn-common mt-5">Submit your job</a>
+                            @*<div class="custom-file mb-3">
+            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+            <label class="custom-file-label form-control" for="validatedCustomFile">Choose file...</label>
+            <div class="invalid-feedback">Example invalid custom file feedback</div>
+        </div>*@
+                            <button class="btn btn-common mt-5" type="button" id="submit">Submit</button>
+                            @*<button class="btn btn-common mt-5" type="button" id="preview">Preview</button>*@
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-common mt-5 " id="preview" data-toggle="modal" data-target="#previewModal" disabled>
+                                Launch demo modal
+                            </button>
+
+                            <div id="pre"></div>
+
+                            @*<a href="#" class="btn btn-common mt-5">Submit your job</a>*@
                         </form>
                     </div>
                 </div>
@@ -93,6 +102,8 @@
 
 </div>
 @section scripts{
+
+    <script src="~/Scripts/model/postjob.js"></script>
     <script>
         $('#summernote').summernote({
             height: 350,                 // set editor height
@@ -101,4 +112,5 @@
             focus: false                  // set focus to editable area after initializing summernote
         });
     </script>
+
 }
