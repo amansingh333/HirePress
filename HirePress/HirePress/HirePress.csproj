@@ -161,6 +161,7 @@
     <Compile Include="Controllers\CandidateController.cs" />
     <Compile Include="Controllers\EmployerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobController.cs" />
     <Compile Include="CustomPasswordHasher.cs" />
     <Compile Include="Encrypt.cs" />
     <Compile Include="Global.asax.cs">
@@ -427,6 +428,7 @@
     <Content Include="Theme\homepage-assets\assets\fonts\LineIcons0ad2.woff" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Employer\PostJob.cshtml" />
+    <Content Include="Views\Job\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

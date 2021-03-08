@@ -12,6 +12,9 @@ namespace HirePress
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.MapMvcAttributeRoutes();
+
+            //routes.MapRoute("SpecificRoute", "{action}/{id}", new { controller = "Job", action = "Index", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 name: "Default",
