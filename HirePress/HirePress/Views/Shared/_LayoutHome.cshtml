@@ -13,9 +13,13 @@
     @Html.Partial("_StylesLoading")
 </head>
 <body>
+
     @Html.Partial("_Header")
 
-    @RenderBody()
+    <div style="min-height:500px;">
+        <div style="width:100%;height:58px;"></div>
+        @RenderBody()
+    </div>
 
     @Html.Partial("_Footer")
 

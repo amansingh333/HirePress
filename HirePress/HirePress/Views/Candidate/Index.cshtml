@@ -3,7 +3,271 @@
     ViewBag.Title = "Candidate Home";
 }
 
-<div class="container theme">
-    <h2>Candidate Home</h2>
+
+<style>
+    .location {
+        display: inline-block;
+        color: #9a9a9a;
+        line-height: 22px;
+        margin: 8px 0;
+        width: 100%;
+    }
+
+    .job-listings .btn-full-time {
+        font-size: 12px;
+        color: #6f6f6f;
+        text-transform: none;
+        line-height: inherit;
+    }
+
+    .filter-heading {
+        font-size: 16px;
+        margin-bottom: 1.2rem;
+        font-weight: 500 !important;
+    }
+
+    .filters-wrapper .box {
+        padding: 15px;
+        margin-bottom: 2rem;
+    }
+
+    .filters-wrapper label {
+        font-size: 13px;
+    }
+
+    .job-posting-action {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .job-listings .btn-apply {
+        line-height: normal;
+    }
+    .page-header{
+        background:none;
+    }
+</style>
+
+
+<div class="page-header pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="inner-header">
+                    <h3>Showing 1 - 4 out of 83 jobs for you</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+    <section class="job-browse section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-xs-12 filters-wrapper">
+
+                    <div class="box">
+                        <h4 class="text-left filter-heading">
+                            Filter by status
+                        </h4>
+                        <form class="login-form">
+
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">All Jobs</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Recommended Jobs</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Not interested</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Already viewed</label>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="box">
+                        <h4 class="text-left filter-heading">
+                            Filter by company size
+                        </h4>
+                        <form class="login-form">
+
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">All</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Small</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Medium</label>
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                <label class="form-check-label" for="exampleCheck1">Large</label>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="box">
+                        <h4 class="text-left filter-heading">
+                            Filter by location
+                        </h4>
+                        <form class="login-form">
+                            <div class="">
+                                <input type="text" class="form-control" placeholder="Location: City, State, Zip">
+                            </div>
+                        </form>
+                    </div>
+
+
+
+                </div>
+                <div class="col-lg-9 col-md-9 col-xs-12">
+                    <a class="job-listings" href="job-details.html">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-xs-12">
+                                <div class="job-company-logo">
+                                    <img src="~/Theme/homepage-assets/assets/img/features/img1.png" alt="">
+                                </div>
+
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-xs-12 text-left pl-4">
+                                <div class="job-details">
+                                    <h3>AmazeSoft - App Developer</h3>
+                                    <div class="location mt-0">
+                                        <i class="lni-map-marker"></i> New Yourk, US
+                                    </div>
+                                </div>
+                                <p>
+
+                                    upGrad offers online accredited courses and certificates for professionals, in
+                                    relevant industries such as E-Commerce, Big Data and BFSI. Courses are taught by
+                                    professors of top class universities.
+
+                                </p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-12 text-center job-posting-action">
+                                <span class="btn-apply">View</span> <br>
+                                <span class="btn-full-time">Not intrested</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="job-listings" href="job-details.html">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-xs-12">
+                                <div class="job-company-logo">
+                                    <img src="~/Theme/homepage-assets/assets/img/features/img2.png" alt="">
+                                </div>
+
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-xs-12 text-left pl-4">
+                                <div class="job-details">
+                                    <h3>AmazeSoft - App Developer</h3>
+                                    <div class="location mt-0">
+                                        <i class="lni-map-marker"></i> New Yourk, US
+                                    </div>
+                                </div>
+                                <p>
+
+                                    upGrad offers online accredited courses and certificates for professionals, in
+                                    relevant industries such as E-Commerce, Big Data and BFSI. Courses are taught by
+                                    professors of top class universities.
+
+                                </p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-12 text-center job-posting-action">
+                                <span class="btn-apply">View</span> <br>
+                                <span class="btn-full-time">Not intrested</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="job-listings" href="job-details.html">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-xs-12">
+                                <div class="job-company-logo">
+                                    <img src="~/Theme/homepage-assets/assets/img/features/img3.png" alt="">
+                                </div>
+
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-xs-12 text-left pl-4">
+                                <div class="job-details">
+                                    <h3>AmazeSoft - App Developer</h3>
+                                    <div class="location mt-0">
+                                        <i class="lni-map-marker"></i> New Yourk, US
+                                    </div>
+                                </div>
+                                <p>
+
+                                    upGrad offers online accredited courses and certificates for professionals, in
+                                    relevant industries such as E-Commerce, Big Data and BFSI. Courses are taught by
+                                    professors of top class universities.
+
+                                </p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-12 text-center job-posting-action">
+                                <span class="btn-apply">View</span> <br>
+                                <span class="btn-full-time">Not intrested</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="job-listings" href="job-details.html">
+                        <div class="row">
+                            <div class="col-lg-1 col-md-1 col-xs-12">
+                                <div class="job-company-logo">
+                                    <img src="~/Theme/homepage-assets/assets/img/features/img4.png" alt="">
+                                </div>
+
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-xs-12 text-left pl-4">
+                                <div class="job-details">
+                                    <h3>AmazeSoft - App Developer</h3>
+                                    <div class="location mt-0">
+                                        <i class="lni-map-marker"></i> New Yourk, US
+                                    </div>
+                                </div>
+                                <p>
+
+                                    upGrad offers online accredited courses and certificates for professionals, in
+                                    relevant industries such as E-Commerce, Big Data and BFSI. Courses are taught by
+                                    professors of top class universities.
+
+                                </p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-xs-12 text-center job-posting-action">
+                                <span class="btn-apply">View</span> <br>
+                                <span class="btn-full-time">Not intrested</span>
+                            </div>
+                        </div>
+                    </a>
+
+
+                    <ul class="pagination">
+                        <li class="active"><a href="#" class="btn-prev"><i class="lni-angle-left"></i> prev</a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li class="active"><a href="#" class="btn-next">Next <i class="lni-angle-right"></i></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
