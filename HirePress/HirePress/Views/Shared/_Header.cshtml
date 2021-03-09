@@ -10,97 +10,125 @@
                         <span class="lni-menu"></span>
                         <span class="lni-menu"></span>
                     </button>
-                    <a href="/Home/Index" class="navbar-brand"><img src="~/Theme/homepage-assets/assets/img/logo.png" alt=""></a>
+                    @if (Session["UserType"] != null)
+                    {
+                        if (Session["UserEmployer"] == null)
+                        {
+                            if (Session["UserAdmin"] != null || Session["UserSuperAdmin"] != null)
+                            {
+                                <a href="/Home/Index" class="navbar-brand"><img src="~/Theme/homepage-assets/assets/img/logo.png" alt=""></a>
+                            }
+                            else
+                            {
+                                <a href="/Candidate/Index" class="navbar-brand"><img src="~/Theme/homepage-assets/assets/img/logo.png" alt=""></a>
+                            }
+                        }
+                        else
+                        {
+                           <a href="/Employer/Index" class="navbar-brand"><img src="~/Theme/homepage-assets/assets/img/logo.png" alt=""></a>
+                        }
+                    }
+                    else
+                    {
+                        <a href="/Home/Index" class="navbar-brand"><img src="~/Theme/homepage-assets/assets/img/logo.png" alt=""></a>
+                    }
                 </div>
                 <div class="collapse navbar-collapse" id="main-navbar">
                     <ul class="navbar-nav mr-auto w-100 justify-content-end">
                         @*<li class="nav-item dropdown active">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Home
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
-                                    <li><a class="dropdown-item" href="index-2.html">Home 2</a></li>
-                                </ul>
-                            </li>
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Home
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item active" href="index.html">Home 1</a></li>
+                                <li><a class="dropdown-item" href="index-2.html">Home 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pages
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">About</a></li>
+                                <li><a class="dropdown-item" href="job-page.html">Job Page</a></li>
+                                <li><a class="dropdown-item" href="job-details.html">Job Details</a></li>
+                                <li><a class="dropdown-item" href="resume.html">Resume Page</a></li>
+                                <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+                                <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                                <li><a class="dropdown-item" href="pricing.html">Pricing Tables</a></li>
+                                <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Candidates
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="browse-jobs.html">Browse Jobs</a></li>
+                                <li><a class="dropdown-item" href="browse-categories.html">Browse Categories</a></li>
+                                <li><a class="dropdown-item" href="add-resume.html">Add Resume</a></li>
+                                <li><a class="dropdown-item" href="manage-resumes.html">Manage Resumes</a></li>
+                                <li><a class="dropdown-item" href="job-alerts.html">Job Alerts</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Employers
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="post-job.html">Add Job</a></li>
+                                <li><a class="dropdown-item" href="manage-jobs.html">Manage Jobs</a></li>
+                                <li><a class="dropdown-item" href="manage-applications.html">Manage Applications</a></li>
+                                <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Blog
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="blog.html">Blog - Right Sidebar</a></li>
+                                <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
+                                <li><a class="dropdown-item" href="blog-full-width.html"> Blog full width</a></li>
+                                <li><a class="dropdown-item" href="single-post.html">Blog Single Post</a></li>
+                            </ul>
+                        </li>*@
+                        @if (Session["UserType"] != null)
+                        {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Pages
+                                    @Session["UserName"]<i class="lni-chevron-down" style="margin-left: 5px;position: relative;top: 2px;"></i>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="about.html">About</a></li>
-                                    <li><a class="dropdown-item" href="job-page.html">Job Page</a></li>
-                                    <li><a class="dropdown-item" href="job-details.html">Job Details</a></li>
-                                    <li><a class="dropdown-item" href="resume.html">Resume Page</a></li>
+                                    @if (Session["UserAdmin"] != null)
+                                    {
+                                        <li><a class="dropdown-item" href="/Account/Admin">Admin</a></li>
+                                    }
+                                    @if (Session["UserSuperAdmin"] != null)
+                                    {
+                                    <li><a class="dropdown-item" href="/Account/SuperAdmin">Super Admin</a></li>
+                                    }
+                                    <li><a class="dropdown-item" href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
+                                    @*<li><a class="dropdown-item" href="resume.html">Resume Page</a></li>
                                     <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
                                     <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
                                     <li><a class="dropdown-item" href="pricing.html">Pricing Tables</a></li>
-                                    <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                                    <li><a class="dropdown-item" href="contact.html">Contact</a></li>*@
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Candidates
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="browse-jobs.html">Browse Jobs</a></li>
-                                    <li><a class="dropdown-item" href="browse-categories.html">Browse Categories</a></li>
-                                    <li><a class="dropdown-item" href="add-resume.html">Add Resume</a></li>
-                                    <li><a class="dropdown-item" href="manage-resumes.html">Manage Resumes</a></li>
-                                    <li><a class="dropdown-item" href="job-alerts.html">Job Alerts</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Employers
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="post-job.html">Add Job</a></li>
-                                    <li><a class="dropdown-item" href="manage-jobs.html">Manage Jobs</a></li>
-                                    <li><a class="dropdown-item" href="manage-applications.html">Manage Applications</a></li>
-                                    <li><a class="dropdown-item" href="browse-resumes.html">Browse Resumes</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Blog
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="blog.html">Blog - Right Sidebar</a></li>
-                                    <li><a class="dropdown-item" href="blog-left-sidebar.html">Blog - Left Sidebar</a></li>
-                                    <li><a class="dropdown-item" href="blog-full-width.html"> Blog full width</a></li>
-                                    <li><a class="dropdown-item" href="single-post.html">Blog Single Post</a></li>
-                                </ul>
-                            </li>*@
-                        @if (Session["UserType"] != null)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link" style="color:#26ae61;cursor:text;" href="javascript:void()">
-                                    @Session["UserName"]
-                                </a>
-                            </li>
-                            if (Session["UserAdmin"] != null)
+                            if (Session["UserEmployer"] != null || Session["UserSuperAdmin"] != null)
                             {
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/Account/Admin">
-                                        Admin
-                                    </a>
-                                </li>
-                            }
-                            if (Session["UserSuperAdmin"] != null)
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/Account/SuperAdmin">Super Admin</a>
-                                </li>
-                            }
-                            <li class="nav-item">
-                                <a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Logout</a>
+                            <li class="button-group">
+                                <a href="/Employer/PostJob" class="button btn btn-common">Post Job</a>
                             </li>
+                            }
                         }
                         else
                         {
                             if (ViewBag.Title != "Employer - Signin")
                             {
+                                if (ViewBag.Title != "Login" && ViewBag.Title != "Register")
+                                {
                                 <li class="nav-item">
                                     <a class="nav-link" href="/Account/Login">
                                         Login
@@ -109,13 +137,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/Account/Register">Sign Up</a>
                                 </li>
+                                }
+                                <li class="button-group">
+                                    <a href="/Account/Employer" class="button btn btn-common" target="_blank">Employer</a>
+                                </li>
                             }
-                        }
-                        @if (ViewBag.Title != "Employer - Signin")
-                        {
-                            <li class="button-group">
-                                <a href="/Employer/Index" class="button btn btn-common" target="_blank">Employer</a>
-                            </li>
                         }
                     </ul>
                 </div>

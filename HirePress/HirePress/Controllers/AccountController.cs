@@ -100,6 +100,128 @@ namespace HirePress.Controllers
         }
 
         [AllowAnonymous]
+        [OutputCache(NoStore = true, Location = System.Web.UI.OutputCacheLocation.None)]
+        public ActionResult Employer()
+        {
+            return View();
+        }
+
+        // POST: /Account/Register
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Employer(SignupViewModel model, string ReturnUrl)
+        {
+            if (model.RVM != null)
+            {
+                if (ModelState.IsValid)
+                {
+
+                    var user = new ApplicationUser { UserName = model.RVM.Email, Email = model.RVM.Email, PhoneNumber = model.RVM.PhoneNo };
+
+                    var result = await UserManager.CreateAsync(user, model.RVM.Password);
+
+                    if (result.Succeeded)
+                    {
+                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+
+
+                        RegisterViewModel rvm = new RegisterViewModel()
+                        {
+                            FirstName = model.RVM.FullName.Split(new String[] { " " }, StringSplitOptions.None).Length < 2 ? model.RVM.FullName : model.RVM.FullName.Split(new String[] { " " }, StringSplitOptions.None)[0],
+                            LastName = model.RVM.FullName.Split(new String[] { " " }, StringSplitOptions.None).Length < 2 ? null : model.RVM.FullName.Split(new String[] { " " }, StringSplitOptions.None)[1],
+                            Email = model.RVM.Email
+                        };
+                        Util.CreateUserDetails(rvm);
+
+                        // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
+                        // Send an email with this link
+                        string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+                        var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+                        await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Hi, <br/>Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+
+                        await UserManager.AddToRoleAsync(user.Id, "employer");
+
+                        Session["Email"] = user.Email;
+
+                        return View();
+                    }
+                    AddErrors(result);
+                }
+
+                // If we got this far, something failed, redisplay form
+                return View(model);
+            }
+            else
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(model);
+                }
+                // This doesn't count login failures towards account lockout
+                // To enable password failures to trigger account lockout, change to shouldLockout: true
+
+                var user = await UserManager.FindByEmailAsync(model.LVM.Email);
+
+                if (user == null)
+                {
+                    // Don't reveal that the user does not exist or is not confirmed
+                    ViewBag.Message = String.Format("User Doesn't Exist.");
+                    return View();
+                }
+                if (!(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                {
+                    ViewBag.Message = String.Format("Please Confirm your Email!");
+                    return View();
+                }
+                var result = new SignInStatus();
+                if (UserManager.IsInRole(user.Id, "admin") || UserManager.IsInRole(user.Id, "superadmin") || UserManager.IsInRole(user.Id, "employer")) {
+                    result = await SignInManager.PasswordSignInAsync(user.UserName, model.LVM.Password, isPersistent: false, shouldLockout: false);
+                }
+                else
+                {
+                    ViewBag.Message = String.Format("Sorry, only Employer can Login from here!");
+                    return View();
+                }
+                switch (result)
+                {
+                    case SignInStatus.Success:
+                        if (UserManager.IsInRole(user.Id, "admin"))
+                        {
+                            Session["UserAdmin"] = "Admin";
+                            if (UserManager.IsInRole(user.Id, "superadmin"))
+                            {
+                                Session["UserSuperAdmin"] = "SuperAdmin";
+                                CreateSession(model.LVM.Email);
+                                return RedirectToLocal(ReturnUrl, "superadmin");
+                            }
+                            else
+                            {
+                                CreateSession(model.LVM.Email);
+                                return RedirectToLocal(ReturnUrl, "admin");
+                            }
+
+                        }
+                        else
+                        {
+                            Session["UserEmployer"] = "Employer";
+                            CreateSession(model.LVM.Email);
+                            return RedirectToLocal(ReturnUrl, "employer");
+                        }
+                    case SignInStatus.LockedOut:
+                        return View("Lockout");
+                    case SignInStatus.RequiresVerification:
+                        return RedirectToAction("SendCode", new { ReturnUrl = ReturnUrl });
+                    case SignInStatus.Failure:
+                    default:
+                        ModelState.AddModelError("", "Invalid login attempt.");
+                        ViewBag.Message = String.Format("Invalid login attempt.");
+                        return View(model);
+                }
+            }
+        }
+
+        [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
             if (userId == null || code == null)
@@ -121,7 +243,7 @@ namespace HirePress.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public async Task<ActionResult> Login(LoginViewModel model, string ReturnUrl)
         {
             if (!ModelState.IsValid)
             {
@@ -143,37 +265,44 @@ namespace HirePress.Controllers
                 ViewBag.Message = String.Format("Please Confirm your Email!");
                 return View("Login");
             }
-            var result = await SignInManager.PasswordSignInAsync(user.UserName, model.Password, isPersistent: false, shouldLockout: false);
-            
+            var result = new SignInStatus();
+            if (UserManager.IsInRole(user.Id, "admin") || UserManager.IsInRole(user.Id, "superadmin") || !UserManager.IsInRole(user.Id, "employer"))
+            {
+                result = await SignInManager.PasswordSignInAsync(user.UserName, model.Password, isPersistent: false, shouldLockout: false);
+            }
+            else
+            {
+                ViewBag.Message = String.Format("Employer cannot Login from here.");
+                return View();
+            }
             switch (result)
             {
                 case SignInStatus.Success:
-                    Session["Email"] = null;
-                    Session["UserEmail"] = model.Email;
-                    Session["UserType"] = "LoggedIn";
-                    Session["UserName"] = Util.GetUserName(model.Email);
                     if (UserManager.IsInRole(user.Id, "admin"))
                     {
                         Session["UserAdmin"] = "Admin";
                         if(UserManager.IsInRole(user.Id, "superadmin"))
                         {
                             Session["UserSuperAdmin"] = "SuperAdmin";
-                            return RedirectToLocal(returnUrl, "superadmin");
+                            CreateSession(model.Email);
+                            return RedirectToLocal(ReturnUrl, "superadmin");
                         }
                         else
                         {
-                            return RedirectToLocal(returnUrl, "admin");
+                            CreateSession(model.Email);
+                            return RedirectToLocal(ReturnUrl, "admin");
                         }
 
                     }
                     else
                     {
-                        return RedirectToLocal(returnUrl, "user");
+                        CreateSession(model.Email);
+                        return RedirectToLocal(ReturnUrl, "user");
                     }
                 case SignInStatus.LockedOut:
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl });
+                    return RedirectToAction("SendCode", new { ReturnUrl = ReturnUrl });
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
@@ -190,11 +319,27 @@ namespace HirePress.Controllers
             Session["UserEmail"] = null;
             Session["UserName"] = null;
             Session["Email"] = null;
-            Session["UserRole"] = null;
+            Session["UserAdmin"] = null;
+            Session["UserSuperAdmin"] = null;
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             AuthenticationManager.SignOut();
             Session.Abandon();
-            return RedirectToAction("Login", "Account");
+            if(Session["UserEmployer"] == null)            
+                return RedirectToAction("Login", "Account");
+            else
+            {
+                Session["UserEmployer"] = null;
+                return RedirectToAction("Employer", "Account");
+            }
+
+        }
+
+        public void CreateSession(string email)
+        {
+            Session["Email"] = null;
+            Session["UserEmail"] = email;
+            Session["UserType"] = "LoggedIn";
+            Session["UserName"] = Util.GetUserName(email);
         }
 
         [AllowAnonymous]
@@ -203,10 +348,13 @@ namespace HirePress.Controllers
             return View();
         }
 
+        [Authorize(Roles = "admin")]
         public ActionResult Admin()
         {
             return View();  
         }
+
+        [Authorize(Roles = "admin,superadmin")]
         public ActionResult SuperAdmin()
         {
             return View();
@@ -274,16 +422,18 @@ namespace HirePress.Controllers
             }
         }
 
-        private ActionResult RedirectToLocal(string returnUrl, string role)
+        private ActionResult RedirectToLocal(string ReturnUrl, string role)
         {
-            if (Url.IsLocalUrl(returnUrl))
+            if (Url.IsLocalUrl(ReturnUrl))
             {
-                return Redirect(returnUrl);
+                return Redirect(ReturnUrl);
             }
             if (role == "user")
                 return RedirectToAction("Index", "Candidate");
             else if(role == "admin")
                 return RedirectToAction("Admin");
+            else if (role == "employer")
+                return RedirectToAction("Index","Employer");
             else
                 return RedirectToAction("SuperAdmin");
         }
