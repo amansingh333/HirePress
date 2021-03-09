@@ -3,30 +3,37 @@
 
 //Submit Button handler
 $('#submit').click(() => {
-    getJson()
+    getJson();
+    $.ajax({
+        url: "/api/SetPostJobData",
+        type: "POST",
+        data: json,
+        success: function (data) {
+            if (data)
+                Swal.fire("Job Posted Successfully!");
+        },
+        error: function (err) {
+            alert(err.responseText);
+        }
+    });
 });
-
-
 
 function getJson() {
     json = {
         JobTitle: $('input[name=JobTitle]').val(),
-        Company: $('input[name=Company]').val(),
+        Company: $('input[name=CompanyName]').val(),
         Location: $('input[name=Location]').val(),
         Category: $('select[name=Category]').find(':selected').text(),
         Education: $('input[name=Education]').val(),
         JobTags: $('input[name=JobTags]').val(),
         ApplicationEmail: $('input[name=ApplicationEmail]').val(),
         ClosingDate: $('input[name=ClosingDate]').val(),
-        CompanyName: $('input[name=CompanyName]').val(),
         Website: $('input[name=Website]').val(),
         Tagline: $('input[name=Tagline]').val(),
         Description: $('.note-editable').html()
     };
 
 }
-
-
 
 //for creating previewModal
 var div=""
@@ -102,8 +109,7 @@ $('#preview').click(() => {
 //for enable/disable the previewmodal button
 function manage() {
     var bt = document.querySelector('#preview')
-    console.log(jobTitleId.value, companyId.value, locationId.value)
-    if (((jobTitleId.value != "") && (companyId.value != "")) && (locationId.value != "")) {
+    if (((jobTitleId.value != "") && (locationId.value != ""))) {
         bt.disabled = false;
     } else {
         

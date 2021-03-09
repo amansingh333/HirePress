@@ -1,4 +1,5 @@
-﻿using HirePressCore.Partial;
+﻿using HirePressCore.Model;
+using HirePressCore.Partial;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,19 @@ namespace HirePress.Controllers
                 return Json(skillsList, JsonRequestBehavior.AllowGet);
             }
             return Json(false, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost, ValidateInput(false)]
+        public JsonResult SetPostJobData(MasterJobModel model)
+        {
+            bool flag = SetAPI.SetMasterJob(model);
+            return Json(flag);
+        }
+        [HttpGet]
+        public JsonResult alljob()
+        {
+            var data = GetAPI.GetAllJob();
+            return Json(data, JsonRequestBehavior.AllowGet);
         }
     }
 }

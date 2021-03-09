@@ -193,6 +193,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\model\admin.js" />
+    <Content Include="Scripts\model\candidate-index.js" />
     <Content Include="Scripts\model\onboard.js" />
     <Content Include="Scripts\model\postjob.js" />
     <Content Include="Scripts\model\test.js" />
