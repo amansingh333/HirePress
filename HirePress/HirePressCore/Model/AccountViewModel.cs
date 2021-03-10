@@ -20,7 +20,7 @@ namespace HirePressCore.Model
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
         public string LastName { get; set; }
 
-        [Display(Name = "Contact #")]
+        [Display(Name = "Mobile Number")]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNo { get; set; }
 
@@ -99,5 +99,46 @@ namespace HirePressCore.Model
         public ArrayList Roles { get; set; }
     }
 
+    public class SignupViewModel
+    {
+        public EmployerRegisterViewModel RVM { get; set; }
+        public LoginViewModel LVM { get; set; }
+    }
+    public class EmployerRegisterViewModel
+    {
+        [Required]
+        [Display(Name = "Full Name")]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 4)]
+        public string FullName { get; set; }
 
+        [Required]
+        [Display(Name = "Mobile Number")]
+        [DataType(DataType.PhoneNumber)]
+        public string PhoneNo { get; set; }
+
+        [Required]
+        [Display(Name = "Terms And Conditions")]
+        public bool TermsAndConditions { get; set; }
+
+        [Display(Name = "Newsletter")]
+        public bool Newsletter { get; set; }
+
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 5)]
+        [DataType(DataType.Password)]
+        [Display(Name = "Password")]
+        public string Password { get; set; }
+
+        [DataType(DataType.Password)]
+        [Display(Name = "Confirm password")]
+        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        public string ConfirmPassword { get; set; }
+
+
+    }
 }

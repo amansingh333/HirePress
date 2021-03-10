@@ -37,6 +37,10 @@
                                 user += '<input type="checkbox" class="custom-control-input" id="' + data[i].UserID + '" checked="" disabled>';
                                 user += '<label class="custom-control-label" for="' + data[i].UserID + '">Super Admin</label>';
                             }
+                            else if (data[i].Roles[0] == "employer") {
+                                user += '<input type="checkbox" class="custom-control-input" id="' + data[i].UserID + '" checked="" disabled>';
+                                user += '<label class="custom-control-label" for="' + data[i].UserID + '">Employer</label>';
+                            }
                             else {
                                 user += '<input type="checkbox" class="custom-control-input" id="' + data[i].UserID + '" checked="">';
                                 user += '<label class="custom-control-label" for="' + data[i].UserID + '">Admin</label>';

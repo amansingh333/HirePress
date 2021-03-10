@@ -421,7 +421,7 @@
     <Content Include="Views\api\TestAPI.cshtml" />
     <Content Include="Views\Account\SuperAdmin.cshtml" />
     <Content Include="Views\Candidate\Index.cshtml" />
-    <Content Include="Views\Employer\Index.cshtml" />
+    <Content Include="Views\Account\Employer.cshtml" />
     <Content Include="Theme\homepage-assets\assets\css\font\summernote4c4d.eot" />
     <Content Include="Theme\homepage-assets\assets\css\font\summernote4c4d.ttf" />
     <Content Include="Theme\homepage-assets\assets\css\font\summernote4c4d.woff" />
@@ -432,6 +432,7 @@
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Employer\PostJob.cshtml" />
     <Content Include="Views\Job\Index.cshtml" />
+    <Content Include="Views\Employer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
