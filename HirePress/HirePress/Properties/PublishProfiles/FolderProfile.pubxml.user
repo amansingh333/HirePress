@@ -20,19 +20,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>04/16/2020 20:38:56</publishTime>
     </File>
     <File Include="bin/HirePress.dll">
-      <publishTime>03/05/2021 23:26:48</publishTime>
+      <publishTime>03/10/2021 11:59:45</publishTime>
     </File>
     <File Include="bin/HirePress.pdb">
-      <publishTime>03/05/2021 23:26:48</publishTime>
+      <publishTime>03/10/2021 11:59:45</publishTime>
     </File>
     <File Include="bin/HirePressCore.dll">
-      <publishTime>03/05/2021 23:26:47</publishTime>
+      <publishTime>03/10/2021 11:59:42</publishTime>
     </File>
     <File Include="bin/HirePressCore.dll.config">
       <publishTime>02/28/2021 00:24:51</publishTime>
     </File>
     <File Include="bin/HirePressCore.pdb">
-      <publishTime>03/05/2021 23:26:47</publishTime>
+      <publishTime>03/10/2021 11:59:42</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>02/28/2021 00:24:51</publishTime>
@@ -334,8 +334,14 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Scripts/model/admin.js">
       <publishTime>03/02/2021 00:58:11</publishTime>
     </File>
+    <File Include="Scripts/model/candidate-index.js">
+      <publishTime>03/09/2021 01:19:10</publishTime>
+    </File>
     <File Include="Scripts/model/onboard.js">
       <publishTime>03/05/2021 22:53:38</publishTime>
+    </File>
+    <File Include="Scripts/model/postjob.js">
+      <publishTime>03/09/2021 01:10:02</publishTime>
     </File>
     <File Include="Scripts/model/test.js">
       <publishTime>03/02/2021 22:41:24</publishTime>
@@ -806,7 +812,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/04/2021 21:28:09</publishTime>
     </File>
     <File Include="Theme/homepage-assets/assets/css/common.css">
-      <publishTime>03/04/2021 23:19:17</publishTime>
+      <publishTime>03/08/2021 20:50:33</publishTime>
     </File>
     <File Include="Theme/homepage-assets/assets/css/font/summernote4c4d.eot">
       <publishTime>03/04/2021 21:28:09</publishTime>
@@ -1040,7 +1046,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/04/2021 21:28:10</publishTime>
     </File>
     <File Include="Theme/homepage-assets/assets/js/main.js">
-      <publishTime>03/04/2021 21:28:10</publishTime>
+      <publishTime>03/08/2021 23:19:46</publishTime>
     </File>
     <File Include="Theme/homepage-assets/assets/js/owl.carousel.min.js">
       <publishTime>03/04/2021 21:28:10</publishTime>
@@ -2128,29 +2134,32 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Views/Account/ConfirmEmail.cshtml">
       <publishTime>03/04/2021 22:21:18</publishTime>
     </File>
+    <File Include="Views/Account/Employer.cshtml">
+      <publishTime>03/09/2021 23:38:55</publishTime>
+    </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>03/05/2021 22:13:05</publishTime>
+      <publishTime>03/08/2021 20:48:25</publishTime>
     </File>
     <File Include="Views/Account/OnBoard.cshtml">
       <publishTime>03/05/2021 22:53:11</publishTime>
     </File>
     <File Include="Views/Account/Register.cshtml">
-      <publishTime>03/05/2021 22:35:36</publishTime>
+      <publishTime>03/09/2021 21:34:04</publishTime>
     </File>
     <File Include="Views/Account/SuperAdmin.cshtml">
-      <publishTime>03/05/2021 23:20:44</publishTime>
+      <publishTime>03/09/2021 23:04:05</publishTime>
     </File>
     <File Include="Views/API/TestAPI.cshtml">
       <publishTime>02/28/2021 00:24:50</publishTime>
     </File>
     <File Include="Views/Candidate/Index.cshtml">
-      <publishTime>03/04/2021 22:20:31</publishTime>
+      <publishTime>03/09/2021 01:16:35</publishTime>
     </File>
     <File Include="Views/Employer/Index.cshtml">
-      <publishTime>03/04/2021 23:08:11</publishTime>
+      <publishTime>03/10/2021 00:18:36</publishTime>
     </File>
     <File Include="Views/Employer/PostJob.cshtml">
-      <publishTime>03/05/2021 23:23:42</publishTime>
+      <publishTime>03/10/2021 00:07:58</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>02/22/2021 21:02:42</publishTime>
@@ -2159,10 +2168,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/22/2021 21:02:42</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>03/04/2021 22:10:20</publishTime>
+      <publishTime>03/08/2021 22:59:31</publishTime>
     </File>
     <File Include="Views/Home/PostJob.cshtml">
       <publishTime>02/28/2021 00:24:50</publishTime>
+    </File>
+    <File Include="Views/Job/Index.cshtml">
+      <publishTime>03/09/2021 21:40:08</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>02/22/2021 21:02:42</publishTime>
@@ -2171,10 +2183,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/02/2021 00:21:59</publishTime>
     </File>
     <File Include="Views/Shared/_Footer.cshtml">
-      <publishTime>03/05/2021 23:15:49</publishTime>
+      <publishTime>03/08/2021 23:00:38</publishTime>
     </File>
     <File Include="Views/Shared/_Header.cshtml">
-      <publishTime>03/05/2021 23:15:26</publishTime>
+      <publishTime>03/10/2021 01:18:55</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>02/22/2021 21:59:01</publishTime>
@@ -2183,7 +2195,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/02/2021 00:00:25</publishTime>
     </File>
     <File Include="Views/Shared/_LayoutHome.cshtml">
-      <publishTime>03/05/2021 23:17:20</publishTime>
+      <publishTime>03/08/2021 20:46:41</publishTime>
     </File>
     <File Include="Views/Shared/_ScriptLoading.cshtml">
       <publishTime>03/05/2021 23:22:32</publishTime>
@@ -2204,7 +2216,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/04/2021 22:08:25</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>03/05/2021 23:26:52</publishTime>
+      <publishTime>03/10/2021 11:59:55</publishTime>
     </File>
   </ItemGroup>
 </Project>
