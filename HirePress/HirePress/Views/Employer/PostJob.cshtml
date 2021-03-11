@@ -1,6 +1,17 @@
 ﻿@{
     ViewBag.Title = "Post Job";
 }
+<style>
+    .form-control-range {
+        width: 20%;
+        height: 46px;
+        display: inline-block;
+        padding: 0 20px;
+        font-size: 14px;
+        border-radius: 30px;
+        border: 1px solid #ececec;
+    }
+</style>
 
 <div class="container">
     <section class="section">
@@ -8,81 +19,135 @@
             <div class="row justify-content-center">
                 <div class="col-lg-9 col-md-12 col-xs-12">
                     <div class="post-job box">
-                        <h1 class="job-title mb-5">Post a new Job</h1>
+                        <h1 class="mb-5 text-center" style="font-size: 30px">Post a fresher job</h1>
                         <form class="form-ad">
+                            <div class="divider">
+                                <h3 class="job-title">Job Details</h3>
+                            </div>
                             <div class="form-group">
-                                <label class="control-label">Job Title</label>
-                                <input type="text" class="form-control" id="jobTitleId" name="JobTitle" placeholder="Write job title" onkeyup="manage()">
+                                <label class="control-label">Job title</label>
+                                <input type="text" class="form-control" id="jobTitleId" name="JobTitle" placeholder="e.g. Software Engineer Trainee" onkeyup="manage()">
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Location</label>
-                                <input type="text" class="form-control" id="locationId" name="Location" placeholder="e.g.London" onkeyup="manage()">
+                                <input type="text" class="form-control" id="locationId" name="Location" placeholder="e.g. Mumbai" onkeyup="manage()">
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Category</label>
-                                <div class="search-category-container">
-                                    <label class="styled-select">
-                                        <select class="dropdown-product selectpicker" name="Category">
-                                            <option>All Categories</option>
-                                            <option>Finance</option>
-                                            <option>IT & Engineering</option>
-                                            <option>Education/Training</option>
-                                            <option>Art/Design</option>
-                                            <option>Sale/Markting</option>
-                                            <option>Healthcare</option>
-                                            <option>Science</option>
-                                            <option>Food Services</option>
-                                        </select>
-                                    </label>
+                                <label class="control-label">Number of openings</label>
+                                <input type="text" class="form-control" id="locationId" name="Location" placeholder="e.g. 4" onkeyup="manage()">
+                            </div>
+                            @*<div class="form-group">
+            <label class="control-label">Category</label>
+            <div class="search-category-container">
+                <label class="styled-select">
+                    <select class="dropdown-product selectpicker" name="Category">
+                        <option>All Categories</option>
+                        <option>Finance</option>
+                        <option>IT & Engineering</option>
+                        <option>Education/Training</option>
+                        <option>Art/Design</option>
+                        <option>Sale/Markting</option>
+                        <option>Healthcare</option>
+                        <option>Science</option>
+                        <option>Food Services</option>
+                    </select>
+                </label>
+            </div>
+        </div>*@
+                            <div class="form-group">
+                                <label class="control-label">Job description</label>
+                                <textarea rows="8" type="text" class="form-control p-3" id="Education" name="Education" placeholder="e.g. We are looking for a smart individual who will be a part of our web development team based in Gurgaon."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Key responsibilities <span>(optional)</span></label>
+                                <textarea rows="6" type="text" class="form-control p-3" id="Education" name="Education">
+1.
+2.
+3.
+                                 </textarea>
+                            </div>
+
+                            @*Salary Section*@
+                            <div class="divider">
+                                <h3 class="job-title">Salary & perks</h3>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">CTC <span>(optional)</span></label> <br />
+                                <input type="text" class="form-control-range mr-2" id="Education" name="Education" placeholder="e.g. 2.4">  to
+                                <input type="text" class="form-control-range ml-2 mr-2" id="Education" name="Education" placeholder="e.g. 6">  LPA
+                            </div>
+                            <div class="form-group mt-4">
+                                <label class="control-label">Perks <span>(optional)</span></label>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">5 days a week</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Informal dress code</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Cab/Transportation facility</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Free snacks and beverages</label>
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Health Insurance</label>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label">Education <span>(optional)</span></label>
-                                <input type="text" class="form-control" id="Education" name="Education" placeholder="e.g.BE/Btech" >
+
+                            <div class="divider">
+                                <h3 class="job-title">Skills & assessment</h3>
                             </div>
+
+
+
                             <div class="form-group">
-                                <label class="control-label">Job Tags <span>(optional)</span></label>
-                                <input type="text" class="form-control" name="JobTags" placeholder="e.g.PHP,Social Media,Management">
-                                <p class="note">Comma separate tags, such as required skills or technologies, for this job.</p>
+                                <label class="control-label">Skills Required</label>
+                                <input type="text" class="form-control" name="JobTags" placeholder="e.g. PHP, Javascript, SEO">
+                                <p class="note">Comma separate skills, such as required skills or technologies, for this job.</p>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label">Description</label>
+
+                            <div class="form-group mt-4">
+                                <label class="control-label">Do you have any candidate preferences? <span>(optional)</span></label>
+                                <textarea rows="4" type="text" placeholder="e.g. Only Computer Science graduates preferred" class="form-control p-3" id="Education" name="Education"></textarea>
                             </div>
-                            <section id="editor">
-                                <div id="summernote"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quia aut modi fugit, ratione saepe perferendis odio optio repellat dolorum voluptas excepturi possimus similique veritatis nobis. Provident cupiditate delectus, optio?</p></div>
-                            </section>
-                            <div class="form-group">
-                                <label class="control-label">Application email / URL</label>
-                                <input type="text" class="form-control" name="ApplicationEmail" placeholder="Enter an email address or website URL">
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Closing Date <span>(optional)</span></label>
-                                <input type="date" class="form-control" name="ClosingDate" placeholder="yyyy-mm-dd">
-                            </div>
+
+
                             <div class="divider">
                                 <h3 class="job-title">Company Details</h3>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Company Name</label>
-                                <input type="text" class="form-control" name="CompanyName" placeholder="Enter the name of the company">
+                                <input type="text" class="form-control" name="CompanyName" placeholder="e.g. Company name">
+                            </div>
+                            <div class="custom-file mb-3">
+                                <label class="control-label">Company Logo</label> <br />
+                                <input type="file" class="" id="validatedCustomFile" required>
+                                @*<label class="custom-file-label form-control" for="validatedCustomFile">Choose file...</label>
+        <div class="invalid-feedback">Example invalid custom file feedback</div>*@
+                            </div>
+                            <div class="form-group mt-4">
+                                <label class="control-label">Company Description <span>(optional)</span></label>
+                                <textarea rows="4" type="text" placeholder="e.g. Abc Studios happens to be one of the pioneering, creative and most importantly client-friendly digital service providers in the market." class="form-control p-3" id="Education" name="Education"></textarea>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Website <span>(optional)</span></label>
-                                <input type="text" class="form-control" name="Website" placeholder="http://">
+                                <input type="text" class="form-control" name="Website" placeholder="e.g. www.">
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Tagline <span>(optional)</span></label>
-                                <input type="text" class="form-control" name="Tagline" placeholder="Briefly describe your company">
+                                <label class="control-label">Email <span>(optional)</span></label>
+                                <input type="text" class="form-control" name="Tagline" placeholder="e.g. hr@companyname.com">
                             </div>
-                            @*<div class="custom-file mb-3">
-                                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-                                <label class="custom-file-label form-control" for="validatedCustomFile">Choose file...</label>
-                                <div class="invalid-feedback">Example invalid custom file feedback</div>
-                            </div>*@
+
                             <button class="btn btn-common mt-5" type="button" id="submit">Submit</button>
                             @*<button class="btn btn-common mt-5" type="button" id="preview">Preview</button>*@
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-common mt-5 " id="preview" data-toggle="modal" data-target="#previewModal" disabled>
+                            <button type="button" class="btn btn-common mt-5 ml-4" id="preview" data-toggle="modal" data-target="#previewModal" disabled>
                                 Preview
                             </button>
 
